@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>初识Vue.js</title>
+      <link href="posts/24073.html"/>
+      <url>posts/24073.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="初识-VUE"><a href="#初识-VUE" class="headerlink" title="初识 VUE"></a>初识 VUE</h2><p>Vue.js 的官方教程地址：<a href="https://cn.vuejs.org/" target="_blank" rel="noopener">Vue.js</a></p><h3 id="Vue-js-是什么"><a href="#Vue-js-是什么" class="headerlink" title="Vue.js 是什么"></a>Vue.js 是什么</h3><ul><li><p>Vue (读音 /vjuː/，类似于 view) 。</p><p>请不要按字母读作 V、U、E，否则会显得很<code>外行</code></p></li><li><p>是一套用于构建用户界面的<code>渐进式框架</code>。</p><p>Vue 被设计为可以自底向上逐层应用，Vue 的核心库只关注视图层，易上手，还便于与第三方库或既有项目整合。</p><p>当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。</p></li></ul><h3 id="Vue-js之hello-world"><a href="#Vue-js之hello-world" class="headerlink" title="Vue.js之hello world"></a>Vue.js之<code>hello world</code></h3><p>使用Vue框架</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> Vue.js </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+            <tag> 框架 </tag>
+            
+            <tag> Vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>本博客搭建详细教程</title>
       <link href="posts/6.html"/>
       <url>posts/6.html</url>
@@ -25,35 +54,6 @@
             <tag> Hexo </tag>
             
             <tag> GitHub </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>初识Vue.js</title>
-      <link href="posts/24073.html"/>
-      <url>posts/24073.html</url>
-      
-        <content type="html"><![CDATA[<h2 id="初识-VUE"><a href="#初识-VUE" class="headerlink" title="初识 VUE"></a>初识 VUE</h2><p>Vue.js 的官方教程地址：<a href="https://cn.vuejs.org/" target="_blank" rel="noopener">Vue.js</a></p><p>以下为学习梳理：</p><ul><li>Vue.js 是什么<blockquote><p>Vue (读音 /vjuː/，类似于 view) 。—-请不要按字母读作 V、U、E,否则会显得很外行<br>是一套用于构建用户界面的渐进式框架。—-Vue 被设计为可以自底向上逐层应用，Vue 的核心库只关注视图层，易上手，还便于与第三方库或既有项目整合。当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。</p></blockquote></li></ul><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-      
-      
-      <categories>
-          
-          <category> Vue.js </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 前端 </tag>
-            
-            <tag> 框架 </tag>
-            
-            <tag> Vue </tag>
             
         </tags>
       

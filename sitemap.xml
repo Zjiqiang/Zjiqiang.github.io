@@ -30,13 +30,6 @@
   </url>
   
   <url>
-    <loc>https://github.com/Zjiqiang/Zjiqiang.github.io/archives/index.html</loc>
-    
-    <lastmod>2020-06-14</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://github.com/Zjiqiang/Zjiqiang.github.io/about/index.html</loc>
     
     <lastmod>2020-06-14</lastmod>
@@ -44,7 +37,7 @@
   </url>
   
   <url>
-    <loc>https://github.com/Zjiqiang/Zjiqiang.github.io/categories/index.html</loc>
+    <loc>https://github.com/Zjiqiang/Zjiqiang.github.io/archives/index.html</loc>
     
     <lastmod>2020-06-14</lastmod>
     
@@ -52,6 +45,13 @@
   
   <url>
     <loc>https://github.com/Zjiqiang/Zjiqiang.github.io/contact/index.html</loc>
+    
+    <lastmod>2020-06-14</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://github.com/Zjiqiang/Zjiqiang.github.io/categories/index.html</loc>
     
     <lastmod>2020-06-14</lastmod>
     
