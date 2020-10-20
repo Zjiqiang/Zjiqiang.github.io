@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>zhangjiqiang.vip/posts/844.html</loc>
+    
+    <lastmod>2020-10-20</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>zhangjiqiang.vip/posts/24073.html</loc>
     
     <lastmod>2020-10-20</lastmod>
@@ -10,13 +17,6 @@
   
   <url>
     <loc>zhangjiqiang.vip/friends/index.html</loc>
-    
-    <lastmod>2020-10-19</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>zhangjiqiang.vip/posts/6.html</loc>
     
     <lastmod>2020-10-19</lastmod>
     
@@ -37,13 +37,6 @@
   </url>
   
   <url>
-    <loc>zhangjiqiang.vip/categories/index.html</loc>
-    
-    <lastmod>2020-06-14</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>zhangjiqiang.vip/archives/index.html</loc>
     
     <lastmod>2020-06-14</lastmod>
@@ -52,6 +45,13 @@
   
   <url>
     <loc>zhangjiqiang.vip/contact/index.html</loc>
+    
+    <lastmod>2020-06-14</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>zhangjiqiang.vip/categories/index.html</loc>
     
     <lastmod>2020-06-14</lastmod>
     
@@ -95,21 +95,7 @@
   </url>
   
   <url>
-    <loc>zhangjiqiang.vip/tags/%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2020-10-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>zhangjiqiang.vip/tags/Hexo/</loc>
-    <lastmod>2020-10-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>zhangjiqiang.vip/tags/GitHub/</loc>
+    <loc>zhangjiqiang.vip/tags/MVVM/</loc>
     <lastmod>2020-10-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -119,13 +105,6 @@
   
   <url>
     <loc>zhangjiqiang.vip/categories/Vue-js/</loc>
-    <lastmod>2020-10-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>zhangjiqiang.vip/categories/Hexo/</loc>
     <lastmod>2020-10-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
