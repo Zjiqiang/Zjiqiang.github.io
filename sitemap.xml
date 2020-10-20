@@ -30,6 +30,13 @@
   </url>
   
   <url>
+    <loc>https://github.com/Zjiqiang/Zjiqiang.github.io/categories/index.html</loc>
+    
+    <lastmod>2020-06-14</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://github.com/Zjiqiang/Zjiqiang.github.io/about/index.html</loc>
     
     <lastmod>2020-06-14</lastmod>
@@ -45,13 +52,6 @@
   
   <url>
     <loc>https://github.com/Zjiqiang/Zjiqiang.github.io/contact/index.html</loc>
-    
-    <lastmod>2020-06-14</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://github.com/Zjiqiang/Zjiqiang.github.io/categories/index.html</loc>
     
     <lastmod>2020-06-14</lastmod>
     
@@ -74,27 +74,6 @@
 
   
   <url>
-    <loc>https://github.com/Zjiqiang/Zjiqiang.github.io/tags/%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2020-10-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://github.com/Zjiqiang/Zjiqiang.github.io/tags/Hexo/</loc>
-    <lastmod>2020-10-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://github.com/Zjiqiang/Zjiqiang.github.io/tags/GitHub/</loc>
-    <lastmod>2020-10-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://github.com/Zjiqiang/Zjiqiang.github.io/tags/%E5%89%8D%E7%AB%AF/</loc>
     <lastmod>2020-10-20</lastmod>
     <changefreq>daily</changefreq>
@@ -115,17 +94,38 @@
     <priority>0.6</priority>
   </url>
   
-
-  
   <url>
-    <loc>https://github.com/Zjiqiang/Zjiqiang.github.io/categories/Hexo/</loc>
+    <loc>https://github.com/Zjiqiang/Zjiqiang.github.io/tags/%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2020-10-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
+    <loc>https://github.com/Zjiqiang/Zjiqiang.github.io/tags/Hexo/</loc>
+    <lastmod>2020-10-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://github.com/Zjiqiang/Zjiqiang.github.io/tags/GitHub/</loc>
+    <lastmod>2020-10-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+
+  
+  <url>
     <loc>https://github.com/Zjiqiang/Zjiqiang.github.io/categories/Vue-js/</loc>
+    <lastmod>2020-10-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://github.com/Zjiqiang/Zjiqiang.github.io/categories/Hexo/</loc>
     <lastmod>2020-10-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
