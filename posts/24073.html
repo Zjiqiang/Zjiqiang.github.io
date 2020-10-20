@@ -549,7 +549,7 @@
                 
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        903
+                        907
                     </div>
                 
 
@@ -592,7 +592,7 @@
 </blockquote>
 <p>方法三：npm 安装</p>
 <pre class="line-numbers language-shell"><code class="language-shell">$ npm install vue<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="Vue-初体验"><a href="#Vue-初体验" class="headerlink" title="Vue 初体验"></a>Vue 初体验</h3><p>首先，我们先来写一个Hello Vuejs简单样例，来体会下Vue的工作方式：</p>
+<h3 id="Vue-初体验"><a href="#Vue-初体验" class="headerlink" title="Vue 初体验"></a>Vue 初体验</h3><p>首先，我们先来写一个 Hello Vuejs 简单样例，来体会下 Vue 的工作方式：</p>
 <pre><code>&lt;body&gt;
     &lt;div id="app"&gt;
         {{msg}} //引用声明的数据
@@ -600,33 +600,33 @@
     &lt;script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"&gt;&lt;/script&gt;
     &lt;script&gt;
         const vm = new Vue({
-            el: '#app', //用于将Vue实例挂载到要管理的元素
+            el: '#app', //用于将 Vue 实例挂载到要管理的元素
             data: { //定义数据
                 msg: 'Hello Vuejs'}
         })
     &lt;/script&gt;
-&lt;/body&gt;</code></pre><p>Vue的编程范式采用的是声明式编程，给元素一个<code>id</code>，然后在Vue实例中管理此id，并在Vue实例中声明数据等信息，然后在元素中进行引用渲染。</p>
+&lt;/body&gt;</code></pre><p>Vue的编程范式采用的是声明式编程，给元素一个 <code>id</code> ，然后在 Vue 实例中管理此id，并在 Vue 实例中声明数据等信息，然后在元素中进行引用渲染。</p>
 <blockquote>
-<p>声明式编程有利于HTML代码与数据完全分离。</p>
+<p>声明式编程有利于 HTML 代码与数据完全分离。</p>
 </blockquote>
-<p>在Hello Vuejs的代码中，都做了哪些事情：</p>
+<p>在 Hello Vuejs 的代码中，都做了哪些事情：</p>
 <ol>
-<li><p>创建一个Vue对象。</p>
+<li><p>创建一个 Vue 对象。</p>
 </li>
 <li><p>对象中包含了一些选项：</p>
 <ol>
-<li>el属性：该属性决定了这个Vue对象挂载到哪一个元素上。</li>
-<li>data属性：该属性中通常会存储一些数据。这些数据可以是直接定义，也可以来自网络，从服务器加载。</li>
+<li>el 属性：该属性决定了这个 Vue 对象挂载到哪一个元素上。</li>
+<li>data 属性：该属性中通常会存储一些数据。这些数据可以是直接定义，也可以来自网络，从服务器加载。</li>
 </ol>
 </li>
-<li><p>浏览器在执行代码过程中，先加载对应的HTML结构，后创建Vue实例，对元HTML进行解析和修改。</p>
+<li><p>浏览器在执行代码过程中，先加载对应的 HTML 结构，后创建 Vue 实例，对元 HTML 进行解析和修改。</p>
 <blockquote>
-<p>由于浏览器是先加载HTML结构，再渲染数据，所以，当频繁刷新页面时，可以看到<code></code>的闪动，此问题在后边通过<code>v-text</code>指令进行解决。</p>
+<p>由于浏览器是先加载 HTML 结构，再渲染数据，所以，当频繁刷新页面时，可以看到 <code></code> 的闪动，此问题在后边通过 <code>v-text</code> 指令进行解决。</p>
 </blockquote>
 </li>
 </ol>
 <p>接下来，我们来展示一个更加复杂的数据：数据列表。</p>
-<p>当我们从服务器请求到一个列表时，按如下代码展示到HTML中：</p>
+<p>当我们从服务器请求到一个列表时，按如下代码展示到 HTML 中：</p>
 <pre><code>  &lt;body&gt;
     &lt;div id="app"&gt;
       &lt;ul&gt;
@@ -642,8 +642,8 @@
         },
       });
     &lt;/script&gt;
-  &lt;/body&gt;</code></pre><p>在HTML代码中，使用<code>v-for</code>指令遍历数组并展示，这样就不用在JavaScript代码中进行DOM的拼接相关操作。</p>
-<p>而且，更重要的是，它还是响应式的，当我们数组中的数据发生改变时，界面会自动改变，如在浏览器开发者模式的console中输入app.arr.push(“化学”)，界面就会自动添加一个<code>&lt;li&gt;</code>，而不用再使用Js操作DOM了。</p>
+  &lt;/body&gt;</code></pre><p>在HTML代码中，使用 <code>v-for</code> 指令遍历数组并展示，这样就不用在 JavaScript 代码中进行 DOM 的拼接相关操作。</p>
+<p>而且，更重要的是，它还是响应式的，当我们数组中的数据发生改变时，界面会自动改变，如在浏览器开发者模式的 console 中输入 app.arr.push(“化学”) ，界面就会自动添加一个 <code>&lt;li&gt;</code> ，而不用再使用 JavaScript 操作 DOM 了。</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1250,7 +1250,7 @@
 
 
 <script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1603179211219')
+  navigator.serviceWorker.register('/sw.js?t=1603179730426')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }
@@ -1275,10 +1275,10 @@
             }
           }
         });
-        </script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script><script>
+        </script><script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
 </html>
