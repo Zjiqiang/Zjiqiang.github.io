@@ -4,8 +4,8 @@
 
 <head><link rel=manifest href=/manifest.json>
     <meta charset="utf-8">
-    <meta name="keywords" content="分类, 博客 张继强 前端学习">
-    <meta name="description" content="分类 | 碎碎念&amp;小强">
+    <meta name="keywords" content="标签: Vue 数据操作, 博客 张继强 前端学习">
+    <meta name="description" content="标签: Vue 数据操作 | 碎碎念&amp;小强">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +14,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="theme-color" content="white"/>
-    <title>分类 | 碎碎念&amp;小强</title>
+    <title>标签: Vue 数据操作 | 碎碎念&amp;小强</title>
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -408,24 +408,103 @@
 
     
 
-<div id="category-cloud" class="container chip-container">
+<div id="tags" class="container chip-container">
     <div class="card">
         <div class="card-content">
             <div class="tag-title center-align">
-                <i class="fa fa-bookmark"></i>&nbsp;&nbsp;文章分类
+                <i class="fa fa-tags"></i>&nbsp;&nbsp;文章标签
             </div>
             <div class="tag-chips">
                 
                     
-                        
-                        <a href="/categories/Vue-js/" title="Vue.js: 4">
+                    <a href="/tags/%E5%89%8D%E7%AB%AF/" title="前端: 4">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                          style="background-color: #F9EBEA;">Vue.js
+                          data-tagname="前端" style="background-color: #F9EBEA;">前端
                         <span class="tag-length">4</span>
                     </span>
-                        </a>
+                    </a>
+                
                     
+                    <a href="/tags/%E6%A1%86%E6%9E%B6/" title="框架: 4">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                          data-tagname="框架" style="background-color: #F5EEF8;">框架
+                        <span class="tag-length">4</span>
+                    </span>
+                    </a>
+                
+                    
+                    <a href="/tags/Vue/" title="Vue: 4">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                          data-tagname="Vue" style="background-color: #D5F5E3;">Vue
+                        <span class="tag-length">4</span>
+                    </span>
+                    </a>
+                
+                    
+                    <a href="/tags/MVVM/" title="MVVM: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                          data-tagname="MVVM" style="background-color: #E8F8F5;">MVVM
+                        <span class="tag-length">1</span>
+                    </span>
+                    </a>
+                
+                    
+                    <a href="/tags/%E5%B1%9E%E6%80%A7%E6%93%8D%E4%BD%9C/" title="属性操作: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                          data-tagname="属性操作" style="background-color: #FEF9E7;">属性操作
+                        <span class="tag-length">1</span>
+                    </span>
+                    </a>
+                
+                    
+                    <a href="/tags/v-bind/" title="v-bind: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                          data-tagname="v-bind" style="background-color: #F8F9F9;">v-bind
+                        <span class="tag-length">1</span>
+                    </span>
+                    </a>
+                
+                    
+                    <a href="/tags/Vue-%E5%B1%9E%E6%80%A7%E6%93%8D%E4%BD%9C/" title="Vue 属性操作: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                          data-tagname="Vue 属性操作" style="background-color: #82E0AA;">Vue 属性操作
+                        <span class="tag-length">1</span>
+                    </span>
+                    </a>
+                
+                    
+                    <a href="/tags/Mustache/" title="Mustache: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                          data-tagname="Mustache" style="background-color: #D7BDE2;">Mustache
+                        <span class="tag-length">1</span>
+                    </span>
+                    </a>
+                
+                    
+                    <a href="/tags/%E6%8F%92%E5%80%BC/" title="插值: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                          data-tagname="插值" style="background-color: #A3E4D7;">插值
+                        <span class="tag-length">1</span>
+                    </span>
+                    </a>
+                
+                    
+                    <a href="/tags/Vue-%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C/" title="Vue 数据操作: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-active "
+                          data-tagname="Vue 数据操作" style="background-color: #85C1E9;">Vue 数据操作
+                        <span class="tag-length">1</span>
+                    </span>
+                    </a>
                 
             </div>
         </div>
@@ -433,64 +512,46 @@
 </div>
 
     
-        <style type="text/css">
-    #category-radar {
-        width: 100%;
-        height: 360px;
-    }
-</style>
 
-<div class="container" data-aos="fade-up">
-    <div class="card">
-        <div id="category-radar" class="card-content"></div>
-    </div>
-</div>
-
-<script type="text/javascript" src="/libs/echarts/echarts.min.js"></script>
-<script type="text/javascript">
-    let radarChart = echarts.init(document.getElementById('category-radar'));
-
-    
-
-    let option = {
-        title: {
-            left: 'center',
-            text: '文章分类雷达图',
-            textStyle: {
-                fontWeight: 500,
-                fontSize: 22
-            }
-        },
-        tooltip: {},
-        radar: {
-            name: {
-                textStyle: {
-                    color: '#3C4858'
-                }
-            },
-            indicator: [{"name":"Vue.js","max":8}],
-            nameGap: 5,
-            center: ['50%', '55%'],
-            radius: '66%'
-        },
-        series: [{
-            type: 'radar',
-            color: ['#3ecf8e'],
-            itemStyle: {normal: {areaStyle: {type: 'default'}}},
-            data: [
-                {
-                    value: [4],
-                    name: '文章分类数量'
-                }
-            ]
-        }]
-    };
-
-    radarChart.setOption(option);
-</script>
-    
-
+    <article id="articles" class="container articles">
+        <div class="row tags-posts">
+            
+                
+                <div class="article tag-post col s12 m6 l4" data-tags="前端, 框架, Vue, Mustache, 插值, Vue 数据操作" data-aos="fade-up">
+                    <div class="card">
+                        <a href="/posts/3079.html">
+                            <div class="card-image tag-image">
+                                
+                                    
+                                    <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Vue 数据操作 --- Mustache 语法">
+                                
+                                <span class="card-title">Vue 数据操作 --- Mustache 语法</span>
+                            </div>
+                        </a>
+                        <div class="card-content article-content">
+                            <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-10-21
+                            </span>
+                                <span class="publish-author">
+                                    
+                                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                        
+                                            <a href="/categories/Vue-js/" class="post-category">
+                                Vue.js
+                                </a>
+                                        
+                                    
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+        </div>
+    </article>
 </main>
+
 
 <footer class="page-footer bg-color">
     <div class="container row center-align">
