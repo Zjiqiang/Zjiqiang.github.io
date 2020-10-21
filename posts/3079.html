@@ -14,7 +14,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="theme-color" content="white"/>
-    <title>Vue 基础语法之 Mustache 语法 | 碎碎念&amp;小强</title>
+    <title>Vue 数据操作 --- Mustache 语法 | 碎碎念&amp;小强</title>
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -381,12 +381,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Vue 基础语法之 Mustache 语法</h1>
+                    <h1 class="description center-align post-title">Vue 数据操作 --- Mustache 语法</h1>
                 </div>
             </div>
         </div>
@@ -579,7 +579,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Vue-基础语法之-Mustache"><a href="#Vue-基础语法之-Mustache" class="headerlink" title="Vue 基础语法之 Mustache"></a>Vue 基础语法之 Mustache</h2><p>如何将 data 中的文本数据插入到 HTML 中呢 ？<br>可以通过 Mustache 语法（也就是双大括号）。</p>
+                <h2 id="Vue-数据操作-—-Mustache"><a href="#Vue-数据操作-—-Mustache" class="headerlink" title="Vue 数据操作 — Mustache"></a>Vue 数据操作 — Mustache</h2><p>如何将 data 中的文本数据插入到 HTML 中呢 ？<br>可以通过 Mustache 语法（也就是双大括号）。</p>
 <h3 id="Mustache-基本使用"><a href="#Mustache-基本使用" class="headerlink" title="Mustache 基本使用"></a>Mustache 基本使用</h3><p>我们可以像下面这样使用，并且数据是响应的：</p>
 <pre><code>&lt;body&gt;
   &lt;div id="app"&gt;
@@ -696,12 +696,11 @@
 <h3 id="v-cloak-指令"><a href="#v-cloak-指令" class="headerlink" title="v-cloak 指令"></a>v-cloak 指令</h3><p>由于浏览器是先加载 HTML 结构，再渲染数据，所以，当频繁刷新页面时，可以看到标签的闪动，此问题可通过 <code>v-cloak</code> 指令进行解决。</p>
 <p>这个指令保持在元素上直到关联实例结束编译。和 CSS 规则如 <code>[v-cloak] { display: none }</code> 一起用时，这个指令可以隐藏未编译的 Mustache 标签直到实例准备完毕。</p>
 <p>代码样例：</p>
-<pre class="line-numbers language-CSS"><code class="language-CSS"><style>
+<pre><code>&lt;style&gt;
   [v-cloak] {
     display: none;
   }
-</style><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre><code>&lt;body&gt;
+&lt;/style&gt;</code></pre><pre><code>&lt;body&gt;
   &lt;div id="app"&gt;
     &lt;div v-cloak&gt;{{msg}}&lt;/div&gt;
   &lt;/div&gt;
@@ -847,9 +846,9 @@
                         <div class="card-image">
                             
                                 
-                                <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Vue 基础语法之 Mustache 语法">
+                                <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Vue 数据操作 --- Mustache 语法">
                             
-                            <span class="card-title">Vue 基础语法之 Mustache 语法</span>
+                            <span class="card-title">Vue 数据操作 --- Mustache 语法</span>
                         </div>
                     </a>
                     <div class="card-content article-content">
@@ -1340,7 +1339,7 @@
 
 
 <script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1603265557182')
+  navigator.serviceWorker.register('/sw.js?t=1603265876301')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }
