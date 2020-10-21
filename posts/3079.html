@@ -692,15 +692,21 @@
     });
   &lt;/script&gt;
 &lt;/body&gt;</code></pre><p>执行结果：</p>
-<p><img src="/medias/loading/orange.square-circle-preloader.svg" data-original="https://i.loli.net/2020/10/21/U8qac4IXSwMPCKd.png" alt="v-pre.png"></p>
+<p><img src="/medias/loading/orange.square-circle-preloader.svg" data-original="https://i.loli.net/2020/10/21/U8qac4IXSwMPCKd.png" alt="v-pre 运行结果.png"></p>
 <h3 id="v-cloak-指令"><a href="#v-cloak-指令" class="headerlink" title="v-cloak 指令"></a>v-cloak 指令</h3><p>由于浏览器是先加载 HTML 结构，再渲染数据，所以，当频繁刷新页面时，可以看到标签的闪动，此问题可通过 <code>v-cloak</code> 指令进行解决。</p>
 <p>这个指令保持在元素上直到关联实例结束编译。和 CSS 规则如 <code>[v-cloak] { display: none }</code> 一起用时，这个指令可以隐藏未编译的 Mustache 标签直到实例准备完毕。</p>
 <p>代码样例：</p>
+<ul>
+<li>CSS 代码</li>
+</ul>
 <pre><code>&lt;style&gt;
   [v-cloak] {
     display: none;
   }
-&lt;/style&gt;</code></pre><pre><code>&lt;body&gt;
+&lt;/style&gt;</code></pre><ul>
+<li>HTML 代码</li>
+</ul>
+<pre><code>&lt;body&gt;
   &lt;div id="app"&gt;
     &lt;div v-cloak&gt;{{msg}}&lt;/div&gt;
   &lt;/div&gt;
@@ -1339,7 +1345,7 @@
 
 
 <script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1603265876301')
+  navigator.serviceWorker.register('/sw.js?t=1603266059569')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }
