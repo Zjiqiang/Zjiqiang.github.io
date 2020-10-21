@@ -557,14 +557,14 @@
                 
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        787
+                        1.1k
                     </div>
                 
 
                 
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        3 分
+                        5 分
                     </div>
                 
 
@@ -581,18 +581,18 @@
             <div id="articleContent">
                 <h2 id="Vue-基础语法之-Mustache"><a href="#Vue-基础语法之-Mustache" class="headerlink" title="Vue 基础语法之 Mustache"></a>Vue 基础语法之 Mustache</h2><p>如何将 data 中的文本数据插入到 HTML 中呢 ？<br>可以通过 Mustache 语法（也就是双大括号）。</p>
 <h3 id="Mustache-基本使用"><a href="#Mustache-基本使用" class="headerlink" title="Mustache 基本使用"></a>Mustache 基本使用</h3><p>我们可以像下面这样使用，并且数据是响应的：</p>
-<pre class="line-numbers language-Vue.js"><code class="language-Vue.js"><body>
-  <div id="app">
-    <!-- 插入标签中 -->
-    <div>hello {{name}}</div>
-    <!-- 使用两个Mustache -->
-    <div>{{firstName}} {{lastName}}</div>
-    <!-- 也可以是一个表达式 -->
-    <div>{{firstName + ' ' + lastName}}</div>
-    <div>{{counter * 2}}</div>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script>
+<pre><code>&lt;body&gt;
+  &lt;div id="app"&gt;
+    &lt;!-- 插入标签中 --&gt;
+    &lt;div&gt;hello {{name}}&lt;/div&gt;
+    &lt;!-- 使用两个Mustache --&gt;
+    &lt;div&gt;{{firstName}} {{lastName}}&lt;/div&gt;
+    &lt;!-- 也可以是一个表达式 --&gt;
+    &lt;div&gt;{{firstName + ' ' + lastName}}&lt;/div&gt;
+    &lt;div&gt;{{counter * 2}}&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"&gt;&lt;/script&gt;
+  &lt;script&gt;
     var vm = new Vue({
       el: "#app",
       data: {
@@ -602,14 +602,8 @@
         counter: 100,
       },
     });
-  </script>
-<script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1603265310749')
-    .then(function () {console.log('ServiceWorker Register Successfully.')})
-    .catch(function (e) {console.error(e)});
-}
-</script></body><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>通过上述基本使用样例，可以看到，在 Mustache 语法中，可以有以下用法：</p>
+  &lt;/script&gt;
+&lt;/body&gt;</code></pre><p>通过上述基本使用样例，可以看到，在 Mustache 语法中，可以有以下用法：</p>
 <ul>
 <li>直接在标签中插入。</li>
 <li>使用两个 Mustache 进行拼接。</li>
@@ -621,62 +615,59 @@
 <li>该指令表示元素和组件只渲染一次，不会随着数据的改变而改变。</li>
 </ul>
 <p>代码样例：</p>
-<pre class="line-numbers language-Vue.js"><code class="language-Vue.js"><body>
-  <div id="app">
-    <div>{{msg}}</div>
-    <div v-once>{{msg}}</div>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script>
+<pre><code>&lt;body&gt;
+  &lt;div id="app"&gt;
+    &lt;div&gt;{{msg}}&lt;/div&gt;
+    &lt;div v-once&gt;{{msg}}&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"&gt;&lt;/script&gt;
+  &lt;script&gt;
     var vm = new Vue({
       el: "#app",
       data: {
         msg: "Vuejs",
       },
     });
-  </script>
-</body><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>运行结果：<br><img src="/medias/loading/orange.square-circle-preloader.svg" data-original="https://i.loli.net/2020/10/21/n8XwKvfopbhYDqA.png" alt="v-once 运行结果.png"></p>
+  &lt;/script&gt;
+&lt;/body&gt;</code></pre><p>运行结果：<br><img src="/medias/loading/orange.square-circle-preloader.svg" data-original="https://i.loli.net/2020/10/21/n8XwKvfopbhYDqA.png" alt="v-once 运行结果.png"></p>
 <h3 id="v-html-指令"><a href="#v-html-指令" class="headerlink" title="v-html 指令"></a>v-html 指令</h3><p>当某些情况下，从服务器请求到的数据本身就是一个 HTML 代码。</p>
 <p>如果直接通过 Mustache 来输出，会将 HTML 代码一并输出，但是我们希望的是按照 HTML 格式进行解析，并且显示对应的内容。</p>
 <p>如果我们希望解析出 HTML 展示，就可以使用 <code>v-html</code> 指令，该指令后面旺旺跟上一个 string 类型，vue 实例对象会将 string 的 html 解析出来并进行数据渲染。</p>
 <p>代码样例：</p>
-<pre class="line-numbers language-Vue.js"><code class="language-Vue.js"><body>
-  <div id="app">
-    <div>{{url}}</div>
-    <div v-html="url"></div>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script>
+<pre><code>&lt;body&gt;
+  &lt;div id="app"&gt;
+    &lt;div&gt;{{url}}&lt;/div&gt;
+    &lt;div v-html="url"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"&gt;&lt;/script&gt;
+  &lt;script&gt;
     var vm = new Vue({
       el: "#app",
       data: {
-        url: '<a href="https://www.baidu.com/" target="_blank" rel="noopener">百度一下</a>',
+        url: '&lt;a href="https://www.baidu.com/"&gt;百度一下&lt;/a&gt;',
       },
     });
-  </script>
-</body><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>执行结果：</p>
+  &lt;/script&gt;
+&lt;/body&gt;</code></pre><p>执行结果：</p>
 <p><img src="/medias/loading/orange.square-circle-preloader.svg" data-original="https://i.loli.net/2020/10/21/E5RY926P3ps4TiU.png" alt="v-html 运行结果.png"></p>
 <h3 id="v-text-指令"><a href="#v-text-指令" class="headerlink" title="v-text 指令"></a>v-text 指令</h3><p>v-text 作用和 Mustache 比较相似：都是用于将数据显示在界面中。</p>
 <p>通常情况下，接受一个 string 类型。</p>
 <p>代码样例：</p>
-<pre class="line-numbers language-Vue.js"><code class="language-Vue.js"><body>
-  <div id="app">
-    <div>{{msg}}</div>
-    <div v-text="msg"></div>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script>
+<pre><code>&lt;body&gt;
+  &lt;div id="app"&gt;
+    &lt;div&gt;{{msg}}&lt;/div&gt;
+    &lt;div v-text="msg"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"&gt;&lt;/script&gt;
+  &lt;script&gt;
     var vm = new Vue({
       el: "#app",
       data: {
         msg: "hello world",
       },
     });
-  </script>
-</body><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>执行结果：</p>
+  &lt;/script&gt;
+&lt;/body&gt;</code></pre><p>执行结果：</p>
 <p><img src="/medias/loading/orange.square-circle-preloader.svg" data-original="https://i.loli.net/2020/10/21/5Onua6JkLmU7YMo.png" alt="v-text 运行结果.png"></p>
 <blockquote>
 <p>v-text 和 Mustache （双大括号）结果一样，需要注意的是，当使用 Mustache 时，可以进行数据的拼接等操作，而 v-text 则不可以。</p>
@@ -686,22 +677,21 @@
 <p>第一个 div 元素中的内容会被编译解析出来对应的内容。</p>
 <p>第二个 div 元素中会直接显示 。</p>
 <p>代码样例：</p>
-<pre class="line-numbers language-Vue.js"><code class="language-Vue.js"><body>
-  <div id="app">
-    <div>{{msg}}</div>
-    <div v-pre>{{msg}}</div>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script>
+<pre><code>&lt;body&gt;
+  &lt;div id="app"&gt;
+    &lt;div&gt;{{msg}}&lt;/div&gt;
+    &lt;div v-pre&gt;{{msg}}&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"&gt;&lt;/script&gt;
+  &lt;script&gt;
     var vm = new Vue({
       el: "#app",
       data: {
         msg: "hello world",
       },
     });
-  </script>
-</body><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>执行结果：</p>
+  &lt;/script&gt;
+&lt;/body&gt;</code></pre><p>执行结果：</p>
 <p><img src="/medias/loading/orange.square-circle-preloader.svg" data-original="https://i.loli.net/2020/10/21/U8qac4IXSwMPCKd.png" alt="v-pre.png"></p>
 <h3 id="v-cloak-指令"><a href="#v-cloak-指令" class="headerlink" title="v-cloak 指令"></a>v-cloak 指令</h3><p>由于浏览器是先加载 HTML 结构，再渲染数据，所以，当频繁刷新页面时，可以看到标签的闪动，此问题可通过 <code>v-cloak</code> 指令进行解决。</p>
 <p>这个指令保持在元素上直到关联实例结束编译。和 CSS 规则如 <code>[v-cloak] { display: none }</code> 一起用时，这个指令可以隐藏未编译的 Mustache 标签直到实例准备完毕。</p>
@@ -711,99 +701,20 @@
     display: none;
   }
 </style><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-Vue.js"><code class="language-Vue.js"><body>
-  <div id="app">
-    <div v-cloak>{{msg}}</div>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script>
+<pre><code>&lt;body&gt;
+  &lt;div id="app"&gt;
+    &lt;div v-cloak&gt;{{msg}}&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"&gt;&lt;/script&gt;
+  &lt;script&gt;
     var vm = new Vue({
       el: "#app",
       data: {
         msg: "hello world",
       },
     });
-  </script>
-
-        <script src="//cdn.jsdelivr.net/npm/js-base64/base64.min.js"></script>
-        <script>
-        const hasAttr = (e,a) => a.some(_=> e.attr(_)!==undefined);
-        $('a').each(function() {
-          const $this = $(this);
-          if(hasAttr($this,["data-fancybox","ignore-external-link"])) return;
-          const href = $this.attr('href');
-          if (href && href.match('^((http|https|thunder|qqdl|ed2k|Flashget|qbrowser|ftp|rtsp|mms)://)')) {
-            const strs = href.split('/');
-            if (strs.length >= 3) {
-                const host = strs[2];
-                if (host !== '' || window.location.host) {
-                    $this.attr('href', '/go.html?u='+Base64.encode(href)+'').attr('rel', 'external nofollow noopener noreferrer');
-                    if (true) {
-                        $this.attr('target', '_blank');
-                    }
-                }
-            }
-          }
-        });
-        </script><script>
-            window.imageLazyLoadSetting = {
-                isSPA: false,
-                processImages: null,
-            };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script>
-        <script src="//cdn.jsdelivr.net/npm/js-base64/base64.min.js"></script>
-        <script>
-        const hasAttr = (e,a) => a.some(_=> e.attr(_)!==undefined);
-        $('a').each(function() {
-          const $this = $(this);
-          if(hasAttr($this,["data-fancybox","ignore-external-link"])) return;
-          const href = $this.attr('href');
-          if (href && href.match('^((http|https|thunder|qqdl|ed2k|Flashget|qbrowser|ftp|rtsp|mms)://)')) {
-            const strs = href.split('/');
-            if (strs.length >= 3) {
-                const host = strs[2];
-                if (host !== '' || window.location.host) {
-                    $this.attr('href', '/go.html?u='+Base64.encode(href)+'').attr('rel', 'external nofollow noopener noreferrer');
-                    if (true) {
-                        $this.attr('target', '_blank');
-                    }
-                }
-            }
-          }
-        });
-        </script><script>
-            window.imageLazyLoadSetting = {
-                isSPA: false,
-                processImages: null,
-            };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script>
-        <script src="//cdn.jsdelivr.net/npm/js-base64/base64.min.js"></script>
-        <script>
-        const hasAttr = (e,a) => a.some(_=> e.attr(_)!==undefined);
-        $('a').each(function() {
-          const $this = $(this);
-          if(hasAttr($this,["data-fancybox","ignore-external-link"])) return;
-          const href = $this.attr('href');
-          if (href && href.match('^((http|https|thunder|qqdl|ed2k|Flashget|qbrowser|ftp|rtsp|mms)://)')) {
-            const strs = href.split('/');
-            if (strs.length >= 3) {
-                const host = strs[2];
-                if (host !== '' || window.location.host) {
-                    $this.attr('href', '/go.html?u='+Base64.encode(href)+'').attr('rel', 'external nofollow noopener noreferrer');
-                    if (true) {
-                        $this.attr('target', '_blank');
-                    }
-                }
-            }
-          }
-        });
-        </script><script>
-            window.imageLazyLoadSetting = {
-                isSPA: false,
-                processImages: null,
-            };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<script>
+  &lt;/script&gt;
+&lt;/body&gt;</code></pre><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -1246,7 +1157,7 @@
             
                 
                     &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                            class="white-color">2.5k</span>&nbsp;字
+                            class="white-color">2.9k</span>&nbsp;字
                 
                 
                 <script>
@@ -1428,7 +1339,12 @@
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
 
 
-
+<script>if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js?t=1603265557182')
+    .then(function () {console.log('ServiceWorker Register Successfully.')})
+    .catch(function (e) {console.error(e)});
+}
+</script>
         <script src="//cdn.jsdelivr.net/npm/js-base64/base64.min.js"></script>
         <script>
         const hasAttr = (e,a) => a.some(_=> e.attr(_)!==undefined);
