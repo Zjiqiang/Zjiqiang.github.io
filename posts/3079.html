@@ -581,7 +581,7 @@
             <div id="articleContent">
                 <h2 id="Vue-基础语法之-Mustache"><a href="#Vue-基础语法之-Mustache" class="headerlink" title="Vue 基础语法之 Mustache"></a>Vue 基础语法之 Mustache</h2><p>如何将 data 中的文本数据插入到 HTML 中呢 ？<br>可以通过 Mustache 语法（也就是双大括号）。</p>
 <h3 id="Mustache-基本使用"><a href="#Mustache-基本使用" class="headerlink" title="Mustache 基本使用"></a>Mustache 基本使用</h3><p>我们可以像下面这样使用，并且数据是响应的：</p>
-<pre class="line-numbers language-HTML"><code class="language-HTML"><body>
+<pre class="line-numbers language-Vue.js"><code class="language-Vue.js"><body>
   <div id="app">
     <!-- 插入标签中 -->
     <div>hello {{name}}</div>
@@ -604,7 +604,7 @@
     });
   </script>
 <script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1603265011373')
+  navigator.serviceWorker.register('/sw.js?t=1603265310749')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }
@@ -621,7 +621,7 @@
 <li>该指令表示元素和组件只渲染一次，不会随着数据的改变而改变。</li>
 </ul>
 <p>代码样例：</p>
-<pre class="line-numbers language-HTML"><code class="language-HTML"><body>
+<pre class="line-numbers language-Vue.js"><code class="language-Vue.js"><body>
   <div id="app">
     <div>{{msg}}</div>
     <div v-once>{{msg}}</div>
@@ -641,7 +641,7 @@
 <p>如果直接通过 Mustache 来输出，会将 HTML 代码一并输出，但是我们希望的是按照 HTML 格式进行解析，并且显示对应的内容。</p>
 <p>如果我们希望解析出 HTML 展示，就可以使用 <code>v-html</code> 指令，该指令后面旺旺跟上一个 string 类型，vue 实例对象会将 string 的 html 解析出来并进行数据渲染。</p>
 <p>代码样例：</p>
-<pre class="line-numbers language-HTML"><code class="language-HTML"><body>
+<pre class="line-numbers language-Vue.js"><code class="language-Vue.js"><body>
   <div id="app">
     <div>{{url}}</div>
     <div v-html="url"></div>
@@ -661,7 +661,7 @@
 <h3 id="v-text-指令"><a href="#v-text-指令" class="headerlink" title="v-text 指令"></a>v-text 指令</h3><p>v-text 作用和 Mustache 比较相似：都是用于将数据显示在界面中。</p>
 <p>通常情况下，接受一个 string 类型。</p>
 <p>代码样例：</p>
-<pre class="line-numbers language-HTML"><code class="language-HTML"><body>
+<pre class="line-numbers language-Vue.js"><code class="language-Vue.js"><body>
   <div id="app">
     <div>{{msg}}</div>
     <div v-text="msg"></div>
@@ -686,7 +686,7 @@
 <p>第一个 div 元素中的内容会被编译解析出来对应的内容。</p>
 <p>第二个 div 元素中会直接显示 。</p>
 <p>代码样例：</p>
-<pre class="line-numbers language-HTML"><code class="language-HTML"><body>
+<pre class="line-numbers language-Vue.js"><code class="language-Vue.js"><body>
   <div id="app">
     <div>{{msg}}</div>
     <div v-pre>{{msg}}</div>
@@ -711,7 +711,7 @@
     display: none;
   }
 </style><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-HTML"><code class="language-HTML"><body>
+<pre class="line-numbers language-Vue.js"><code class="language-Vue.js"><body>
   <div id="app">
     <div v-cloak>{{msg}}</div>
   </div>

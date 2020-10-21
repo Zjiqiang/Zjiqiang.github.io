@@ -594,7 +594,7 @@
 <p>方法三：npm 安装</p>
 <pre class="line-numbers language-shell"><code class="language-shell">$ npm install vue<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="Vue-初体验"><a href="#Vue-初体验" class="headerlink" title="Vue 初体验"></a>Vue 初体验</h3><p>首先，我们先来写一个 Hello Vuejs 简单样例，来体会下 Vue 的工作方式：</p>
-<pre class="line-numbers language-HTML"><code class="language-HTML"><body>
+<pre class="line-numbers language-Vue.js"><code class="language-Vue.js"><body>
     <div id="app">
         {{msg}} //引用声明的数据
     </div>
@@ -607,7 +607,7 @@
         })
     </script>
 <script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1603265011373')
+  navigator.serviceWorker.register('/sw.js?t=1603265310749')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }
@@ -634,7 +634,7 @@
 </blockquote>
 <p>接下来，我们来展示一个更加复杂的数据：数据列表。</p>
 <p>当我们从服务器请求到一个列表时，按如下代码展示到 HTML 中：</p>
-<pre class="line-numbers language-HTML"><code class="language-HTML"><body>
+<pre class="line-numbers language-Vue.js"><code class="language-Vue.js"><body>
   <div id="app">
     <ul>
       <li v-for="item in arr">{{item}}</li>
