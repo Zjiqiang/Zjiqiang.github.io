@@ -4,8 +4,8 @@
 
 <head><link rel=manifest href=/manifest.json>
     <meta charset="utf-8">
-    <meta name="keywords" content="MVVM">
-    <meta name="description" content="MVVM 框架相关">
+    <meta name="keywords" content="Mustache">
+    <meta name="description" content="Vue 基础语法之 Mustache 语法">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +14,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="theme-color" content="white"/>
-    <title>MVVM 框架相关 | 碎碎念&amp;小强</title>
+    <title>Vue 基础语法之 Mustache 语法 | 碎碎念&amp;小强</title>
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -381,12 +381,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">MVVM 框架相关</h1>
+                    <h1 class="description center-align post-title">Vue 基础语法之 Mustache 语法</h1>
                 </div>
             </div>
         </div>
@@ -514,8 +514,12 @@
                                     <span class="chip bg-color">Vue</span>
                                 </a>
                             
-                                <a href="/tags/MVVM/">
-                                    <span class="chip bg-color">MVVM</span>
+                                <a href="/tags/Mustache/">
+                                    <span class="chip bg-color">Mustache</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%8F%92%E5%80%BC/">
+                                    <span class="chip bg-color">插值</span>
                                 </a>
                             
                         </div>
@@ -539,21 +543,21 @@
                 
                     <div class="post-date info-break-policy">
                         <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                        2020-10-20
+                        2020-10-21
                     </div>
                 
 
                 
                     <div class="post-date info-break-policy">
                         <i class="fa fa-calendar-check-o fa-fw"></i>更新日期:&nbsp;&nbsp;
-                        2020-10-20
+                        2020-10-21
                     </div>
                 
 
                 
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        900
+                        787
                     </div>
                 
 
@@ -575,38 +579,230 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="MVVM-框架相关"><a href="#MVVM-框架相关" class="headerlink" title="MVVM 框架相关"></a>MVVM 框架相关</h2><p><strong>MVVM 是 MVC 的增强版，实质上和 MVC 没有本质区别，只是代码的位置变动而已</strong>，这是我对 MVVM 的定义，如果你不知道什么是 MVC ，请往下看。</p>
-<h3 id="MVC-简介"><a href="#MVC-简介" class="headerlink" title="MVC 简介"></a>MVC 简介</h3><p><strong>Model、View、Controller</strong>，分别表示<strong>数据、视图、控制器</strong>。其实这只是一种设计思想，具体用什么语言和做什么开发并不重要。所谓 MVC 便是这几个单词的简写。</p>
-<p><img src="/medias/loading/orange.square-circle-preloader.svg" data-original="https://i.loli.net/2020/10/20/7D43asdV5ockGRu.png" alt="mvc.png"></p>
-<p>简单描述了三者作用：</p>
-<p>Model：数据模型，用来存储数据。</p>
-<p>View：视图界面，用来展示 UI 界面和响应用户交互。</p>
-<p>Controller：控制器（大管家角色），监听模型数据的改变和控制视图行为、处理用户交互。</p>
-<h3 id="MVVM-简介"><a href="#MVVM-简介" class="headerlink" title="MVVM 简介"></a>MVVM 简介</h3><p>既然 MVC 这么好，那为什么还要使用 MVVM ？我们先来看一下 MVVM 是什么。</p>
-<p><img src="/medias/loading/orange.square-circle-preloader.svg" data-original="https://i.loli.net/2020/10/20/DMycpBkCPvKH6lu.png" alt="mvvm.png"></p>
-<p>上图描述了 MVVM 一个基本结构，发现<strong>比 MVC 架构中多了一个 ViewModel **，这个 ViewModel 是 MVVM 相对于 MVC 改进的核心思想。在开发过程中，由于需求的变更或添加，项目的复杂度越来越高，代码量越来越大，此时我们会发现 MVC 维护起来有些吃力，由于 Controller 主要用来处理各种逻辑和数据转化，复杂业务逻辑界面的 Controller 非常庞大，维护困难，所以需要</strong>将 Controller 的数据和逻辑处理部分从中抽离出来，用一个专门的对象去管理，这个对象就是 ViewModel ，是 Model 和 Controller 之间的一座桥梁<strong>。这样拆分后， Controller 中的代码变得非常少，变得易于测试和维护，只需要 **Controller 和 ViewModel 做数据绑定</strong>即可，这也就催生了 MVVM 的热潮。</p>
+                <h2 id="Vue-基础语法之-Mustache"><a href="#Vue-基础语法之-Mustache" class="headerlink" title="Vue 基础语法之 Mustache"></a>Vue 基础语法之 Mustache</h2><p>如何将 data 中的文本数据插入到 HTML 中呢 ？<br>可以通过 Mustache 语法（也就是双大括号）。</p>
+<h3 id="Mustache-基本使用"><a href="#Mustache-基本使用" class="headerlink" title="Mustache 基本使用"></a>Mustache 基本使用</h3><p>我们可以像下面这样使用，并且数据是响应的：</p>
+<pre class="line-numbers language-HTML"><code class="language-HTML"><body>
+  <div id="app">
+    <!-- 插入标签中 -->
+    <div>hello {{name}}</div>
+    <!-- 使用两个Mustache -->
+    <div>{{firstName}} {{lastName}}</div>
+    <!-- 也可以是一个表达式 -->
+    <div>{{firstName + ' ' + lastName}}</div>
+    <div>{{counter * 2}}</div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    var vm = new Vue({
+      el: "#app",
+      data: {
+        name: "VueJs",
+        firstName: "zhang",
+        lastName: "san",
+        counter: 100,
+      },
+    });
+  </script>
+<script>if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js?t=1603264668134')
+    .then(function () {console.log('ServiceWorker Register Successfully.')})
+    .catch(function (e) {console.error(e)});
+}
+</script></body><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>通过上述基本使用样例，可以看到，在 Mustache 语法中，可以有以下用法：</p>
+<ul>
+<li>直接在标签中插入。</li>
+<li>使用两个 Mustache 进行拼接。</li>
+<li>在 Mustache 中使用表达式。</li>
+</ul>
+<h3 id="v-once-指令"><a href="#v-once-指令" class="headerlink" title="v-once 指令"></a>v-once 指令</h3><p>当某些情况下，可能不希望界面随意的跟随数据改变，就可以使用 <code>v-once</code> 指令。</p>
+<ul>
+<li>该指令后面不需要跟随任何表达式（比如之前的 <code>v-for</code> 后面是有表达式的）。</li>
+<li>该指令表示元素和组件只渲染一次，不会随着数据的改变而改变。</li>
+</ul>
+<p>代码样例：</p>
+<pre class="line-numbers language-HTML"><code class="language-HTML"><body>
+  <div id="app">
+    <div>{{msg}}</div>
+    <div v-once>{{msg}}</div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    var vm = new Vue({
+      el: "#app",
+      data: {
+        msg: "Vuejs",
+      },
+    });
+  </script>
+</body><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>运行结果：<br><img src="/medias/loading/orange.square-circle-preloader.svg" data-original="https://i.loli.net/2020/10/21/n8XwKvfopbhYDqA.png" alt="v-once 运行结果.png"></p>
+<h3 id="v-html-指令"><a href="#v-html-指令" class="headerlink" title="v-html 指令"></a>v-html 指令</h3><p>当某些情况下，从服务器请求到的数据本身就是一个 HTML 代码。</p>
+<p>如果直接通过 Mustache 来输出，会将 HTML 代码一并输出，但是我们希望的是按照 HTML 格式进行解析，并且显示对应的内容。</p>
+<p>如果我们希望解析出 HTML 展示，就可以使用 <code>v-html</code> 指令，该指令后面旺旺跟上一个 string 类型，vue 实例对象会将 string 的 html 解析出来并进行数据渲染。</p>
+<p>代码样例：</p>
+<pre class="line-numbers language-HTML"><code class="language-HTML"><body>
+  <div id="app">
+    <div>{{url}}</div>
+    <div v-html="url"></div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    var vm = new Vue({
+      el: "#app",
+      data: {
+        url: '<a href="https://www.baidu.com/" target="_blank" rel="noopener">百度一下</a>',
+      },
+    });
+  </script>
+</body><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>执行结果：</p>
+<p><img src="/medias/loading/orange.square-circle-preloader.svg" data-original="https://i.loli.net/2020/10/21/E5RY926P3ps4TiU.png" alt="v-html 运行结果.png"></p>
+<h3 id="v-text-指令"><a href="#v-text-指令" class="headerlink" title="v-text 指令"></a>v-text 指令</h3><p>v-text 作用和 Mustache 比较相似：都是用于将数据显示在界面中。</p>
+<p>通常情况下，接受一个 string 类型。</p>
+<p>代码样例：</p>
+<pre class="line-numbers language-HTML"><code class="language-HTML"><body>
+  <div id="app">
+    <div>{{msg}}</div>
+    <div v-text="msg"></div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    var vm = new Vue({
+      el: "#app",
+      data: {
+        msg: "hello world",
+      },
+    });
+  </script>
+</body><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>执行结果：</p>
+<p><img src="/medias/loading/orange.square-circle-preloader.svg" data-original="https://i.loli.net/2020/10/21/5Onua6JkLmU7YMo.png" alt="v-text 运行结果.png"></p>
 <blockquote>
-<p>以上内容来自转载：</p>
-<p>作者：Niuszeng<br>链接：<a href="https://www.jianshu.com/p/6aeeecd64dcf" target="_blank" rel="noopener">https://www.jianshu.com/p/6aeeecd64dcf</a><br>来源：简书</p>
+<p>v-text 和 Mustache （双大括号）结果一样，需要注意的是，当使用 Mustache 时，可以进行数据的拼接等操作，而 v-text 则不可以。</p>
 </blockquote>
-<h3 id="MVVM-相关概念"><a href="#MVVM-相关概念" class="headerlink" title="MVVM 相关概念"></a>MVVM 相关概念</h3><blockquote>
-<p>MVVM（Model–View–Viewmodel）是一种软件架构模式。</p>
-</blockquote>
-<blockquote>
-<p>MVVM 有助于将图形用户界面的开发与业务逻辑或后端逻辑（数据模型）的开发分离开来，这是通过置标语言或 GUI 代码实现的。 MVVM 的视图模型是一个值转换器， 这意味着视图模型负责从模型中暴露（转换）数据对象，以便轻松管理和呈现对象。在这方面，视图模型比视图做得更多，并且处理大部分视图的显示逻辑。 视图模型可以实现中介者模式，组织对视图所支持的用例集的后端逻辑的访问。</p>
-</blockquote>
-<blockquote>
-<p>MVVM 是马丁·福勒的 PM（Presentation Model）设计模式的变体。  MVVM 以相同的方式抽象出视图的状态和行为，但 PM 以不依赖于特定用户界面平台的方式抽象出视图（创建了视图模型）。<br> MVVM 和 PM 都来自 MVC 模式。</p>
-</blockquote>
-<blockquote>
-<p>MVVM 由微软架构师 Ken Cooper 和 Ted Peters 开发，通过利用 WPF（微软.NET图形系统）和 Silverlight（WPF的互联网应用派生品）的特性来简化用户界面的事件驱动程序设计。 微软的 WPF 和 Silverlight 架构师之一 John Gossman 于2005年在他的博客上发表了 MVVM 。</p>
-</blockquote>
-<blockquote>
-<p>MVVM 也被称为 model-view-binder ，特别是在不涉及 .NET 平台的实现中。 ZK（Java写的一个Web应用框架）和 KnockoutJS（一个JavaScript库）使用model-view-binder 。</p>
-</blockquote>
-<blockquote>
-<p> 以上内容均来自维基百科。<a href="https://zh.wikipedia.org/wiki/MVVM" target="_blank" rel="noopener">MVVM wikipedia</a>。</p>
-</blockquote>
+<h3 id="v-pre-指令"><a href="#v-pre-指令" class="headerlink" title="v-pre 指令"></a>v-pre 指令</h3><p>当不需要解析 Mustache 语法时，可以使用 v-pre 来跳过这个元素和它子元素的编译过程，用于显示原本的 Mustache 语法。</p>
+<p>比如下面的代码：</p>
+<p>第一个 div 元素中的内容会被编译解析出来对应的内容。</p>
+<p>第二个 div 元素中会直接显示 。</p>
+<p>代码样例：</p>
+<pre class="line-numbers language-HTML"><code class="language-HTML"><body>
+  <div id="app">
+    <div>{{msg}}</div>
+    <div v-pre>{{msg}}</div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    var vm = new Vue({
+      el: "#app",
+      data: {
+        msg: "hello world",
+      },
+    });
+  </script>
+</body><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>执行结果：</p>
+<p><img src="/medias/loading/orange.square-circle-preloader.svg" data-original="https://i.loli.net/2020/10/21/U8qac4IXSwMPCKd.png" alt="v-pre.png"></p>
+<h3 id="v-cloak-指令"><a href="#v-cloak-指令" class="headerlink" title="v-cloak 指令"></a>v-cloak 指令</h3><p>由于浏览器是先加载 HTML 结构，再渲染数据，所以，当频繁刷新页面时，可以看到标签的闪动，此问题可通过 <code>v-cloak</code> 指令进行解决。</p>
+<p>这个指令保持在元素上直到关联实例结束编译。和 CSS 规则如 <code>[v-cloak] { display: none }</code> 一起用时，这个指令可以隐藏未编译的 Mustache 标签直到实例准备完毕。</p>
+<p>代码样例：</p>
+<pre class="line-numbers language-CSS"><code class="language-CSS"><style>
+  [v-cloak] {
+    display: none;
+  }
+</style><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-HTML"><code class="language-HTML"><body>
+  <div id="app">
+    <div v-cloak>{{msg}}</div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    var vm = new Vue({
+      el: "#app",
+      data: {
+        msg: "hello world",
+      },
+    });
+  </script>
+
+        <script src="//cdn.jsdelivr.net/npm/js-base64/base64.min.js"></script>
+        <script>
+        const hasAttr = (e,a) => a.some(_=> e.attr(_)!==undefined);
+        $('a').each(function() {
+          const $this = $(this);
+          if(hasAttr($this,["data-fancybox","ignore-external-link"])) return;
+          const href = $this.attr('href');
+          if (href && href.match('^((http|https|thunder|qqdl|ed2k|Flashget|qbrowser|ftp|rtsp|mms)://)')) {
+            const strs = href.split('/');
+            if (strs.length >= 3) {
+                const host = strs[2];
+                if (host !== '' || window.location.host) {
+                    $this.attr('href', '/go.html?u='+Base64.encode(href)+'').attr('rel', 'external nofollow noopener noreferrer');
+                    if (true) {
+                        $this.attr('target', '_blank');
+                    }
+                }
+            }
+          }
+        });
+        </script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script><script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script>
+        <script src="//cdn.jsdelivr.net/npm/js-base64/base64.min.js"></script>
+        <script>
+        const hasAttr = (e,a) => a.some(_=> e.attr(_)!==undefined);
+        $('a').each(function() {
+          const $this = $(this);
+          if(hasAttr($this,["data-fancybox","ignore-external-link"])) return;
+          const href = $this.attr('href');
+          if (href && href.match('^((http|https|thunder|qqdl|ed2k|Flashget|qbrowser|ftp|rtsp|mms)://)')) {
+            const strs = href.split('/');
+            if (strs.length >= 3) {
+                const host = strs[2];
+                if (host !== '' || window.location.host) {
+                    $this.attr('href', '/go.html?u='+Base64.encode(href)+'').attr('rel', 'external nofollow noopener noreferrer');
+                    if (true) {
+                        $this.attr('target', '_blank');
+                    }
+                }
+            }
+          }
+        });
+        </script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script><script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script>
+        <script src="//cdn.jsdelivr.net/npm/js-base64/base64.min.js"></script>
+        <script>
+        const hasAttr = (e,a) => a.some(_=> e.attr(_)!==undefined);
+        $('a').each(function() {
+          const $this = $(this);
+          if(hasAttr($this,["data-fancybox","ignore-external-link"])) return;
+          const href = $this.attr('href');
+          if (href && href.match('^((http|https|thunder|qqdl|ed2k|Flashget|qbrowser|ftp|rtsp|mms)://)')) {
+            const strs = href.split('/');
+            if (strs.length >= 3) {
+                const host = strs[2];
+                if (host !== '' || window.location.host) {
+                    $this.attr('href', '/go.html?u='+Base64.encode(href)+'').attr('rel', 'external nofollow noopener noreferrer');
+                    if (true) {
+                        $this.attr('target', '_blank');
+                    }
+                }
+            }
+          }
+        });
+        </script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script><script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -650,8 +846,12 @@
                                     <span class="chip bg-color">Vue</span>
                                 </a>
                             
-                                <a href="/tags/MVVM/">
-                                    <span class="chip bg-color">MVVM</span>
+                                <a href="/tags/Mustache/">
+                                    <span class="chip bg-color">Mustache</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%8F%92%E5%80%BC/">
+                                    <span class="chip bg-color">插值</span>
                                 </a>
                             
                         </div>
@@ -727,9 +927,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-            <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
                 <div class="article-badge left-badge text-color">
-                    <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                    <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+                </div>
                 <div class="card">
                     <a href="/posts/3079.html">
                         <div class="card-image">
@@ -747,9 +948,9 @@
                             
                         </div>
                         <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-10-21
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-10-21
+                            </span>
                             <span class="publish-author">
                                 
                                     <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -762,6 +963,7 @@
                             </span>
                         </div>
                     </div>
+
                     
                         <div class="card-action article-tags">
                             
@@ -796,19 +998,19 @@
                     下一篇&nbsp;<i class="fa fa-chevron-right"></i>
                 </div>
                 <div class="card">
-                    <a href="/posts/24073.html">
+                    <a href="/posts/844.html">
                         <div class="card-image">
                             
                                 
-                                <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="初识Vue.js">
+                                <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="MVVM 框架相关">
                             
-                            <span class="card-title">初识Vue.js</span>
+                            <span class="card-title">MVVM 框架相关</span>
                         </div>
                     </a>
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                从零快速入门Vue.js
+                                MVVM 框架相关
                             
                         </div>
                         <div class="publish-info">
@@ -840,6 +1042,10 @@
                             
                                 <a href="/tags/Vue/">
                                     <span class="chip bg-color">Vue</span>
+                                </a>
+                            
+                                <a href="/tags/MVVM/">
+                                    <span class="chip bg-color">MVVM</span>
                                 </a>
                             
                         </div>
@@ -1222,12 +1428,7 @@
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
 
 
-<script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1603264668134')
-    .then(function () {console.log('ServiceWorker Register Successfully.')})
-    .catch(function (e) {console.error(e)});
-}
-</script>
+
         <script src="//cdn.jsdelivr.net/npm/js-base64/base64.min.js"></script>
         <script>
         const hasAttr = (e,a) => a.some(_=> e.attr(_)!==undefined);
