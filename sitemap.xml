@@ -51,7 +51,7 @@
   </url>
   
   <url>
-    <loc>zhangjiqiang.vip/contact/index.html</loc>
+    <loc>zhangjiqiang.vip/archives/index.html</loc>
     
     <lastmod>2020-06-14</lastmod>
     
@@ -65,7 +65,14 @@
   </url>
   
   <url>
-    <loc>zhangjiqiang.vip/archives/index.html</loc>
+    <loc>zhangjiqiang.vip/categories/index.html</loc>
+    
+    <lastmod>2020-06-14</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>zhangjiqiang.vip/contact/index.html</loc>
     
     <lastmod>2020-06-14</lastmod>
     
@@ -73,13 +80,6 @@
   
   <url>
     <loc>zhangjiqiang.vip/tags/index.html</loc>
-    
-    <lastmod>2020-06-14</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>zhangjiqiang.vip/categories/index.html</loc>
     
     <lastmod>2020-06-14</lastmod>
     
