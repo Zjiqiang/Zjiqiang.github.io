@@ -4,10 +4,9 @@
 
 <head><link rel=manifest href=/manifest.json>
     <meta charset="utf-8">
-    <meta name="keywords" content="Mustache">
-    <meta name="description" content="Vue 数据操作 — Mustache如何将 data 中的文本数据插入到 HTML 中呢 ？可以通过 Mustache 语法（也就是双大括号）。
-Mustache 基本使用我们可以像下面这样使用，并且数据是响应的：
-&amp;lt;body&amp;gt">
+    <meta name="keywords" content="computed">
+    <meta name="description" content="计算属性介绍在模板中可以直接通过插值语法显示一些 data 中的数据，但是在某些情况下，我们可能需要对数据进行一些转化后再显示，或者需要将多个数据结合起来进行显示。所以需要用到计算属性。
+计算属性基本用法比如我们有 firstName 和 ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +15,7 @@ Mustache 基本使用我们可以像下面这样使用，并且数据是响应�
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="theme-color" content="white"/>
-    <title>Vue 数据操作 --- Mustache 语法 | 碎碎念&amp;小强</title>
+    <title>Vue 属性操作 --- computed | 碎碎念&amp;小强</title>
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -383,12 +382,12 @@ Mustache 基本使用我们可以像下面这样使用，并且数据是响应�
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/24.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Vue 数据操作 --- Mustache 语法</h1>
+                    <h1 class="description center-align post-title">Vue 属性操作 --- computed</h1>
                 </div>
             </div>
         </div>
@@ -512,12 +511,12 @@ Mustache 基本使用我们可以像下面这样使用，并且数据是响应�
                                     <span class="chip bg-color">Vue</span>
                                 </a>
                             
-                                <a href="/tags/Mustache/">
-                                    <span class="chip bg-color">Mustache</span>
+                                <a href="/tags/%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7/">
+                                    <span class="chip bg-color">计算属性</span>
                                 </a>
                             
-                                <a href="/tags/%E6%8F%92%E5%80%BC/">
-                                    <span class="chip bg-color">插值</span>
+                                <a href="/tags/computed/">
+                                    <span class="chip bg-color">computed</span>
                                 </a>
                             
                         </div>
@@ -541,7 +540,7 @@ Mustache 基本使用我们可以像下面这样使用，并且数据是响应�
                 
                     <div class="post-date info-break-policy">
                         <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                        2020-10-21
+                        2020-10-22
                     </div>
                 
 
@@ -577,147 +576,170 @@ Mustache 基本使用我们可以像下面这样使用，并且数据是响应�
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Vue-数据操作-—-Mustache"><a href="#Vue-数据操作-—-Mustache" class="headerlink" title="Vue 数据操作 — Mustache"></a>Vue 数据操作 — Mustache</h2><p>如何将 data 中的文本数据插入到 HTML 中呢 ？<br>可以通过 Mustache 语法（也就是双大括号）。</p>
-<h3 id="Mustache-基本使用"><a href="#Mustache-基本使用" class="headerlink" title="Mustache 基本使用"></a>Mustache 基本使用</h3><p>我们可以像下面这样使用，并且数据是响应的：</p>
+                <h2 id="计算属性介绍"><a href="#计算属性介绍" class="headerlink" title="计算属性介绍"></a>计算属性介绍</h2><p>在模板中可以直接通过插值语法显示一些 data 中的数据，但是在某些情况下，我们可能需要对数据进行一些转化后再显示，或者需要将多个数据结合起来进行显示。所以需要用到计算属性。</p>
+<h3 id="计算属性基本用法"><a href="#计算属性基本用法" class="headerlink" title="计算属性基本用法"></a>计算属性基本用法</h3><p>比如我们有 firstName 和 lastName 两个变量，我们需要显示完整的名称，但是如果多个地方都需要显示完整的名称，我们就需要写多个  。</p>
+<p>我们可以将上面的代码换算成计算属性：</p>
 <pre><code>&lt;body&gt;
-  &lt;div id="app"&gt;
-    &lt;!-- 插入标签中 --&gt;
-    &lt;div&gt;hello {{name}}&lt;/div&gt;
-    &lt;!-- 使用两个Mustache --&gt;
-    &lt;div&gt;{{firstName}} {{lastName}}&lt;/div&gt;
-    &lt;!-- 也可以是一个表达式 --&gt;
-    &lt;div&gt;{{firstName + ' ' + lastName}}&lt;/div&gt;
-    &lt;div&gt;{{counter * 2}}&lt;/div&gt;
-  &lt;/div&gt;
+  &lt;div id="app"&gt;{{fullName}}&lt;/div&gt;
   &lt;script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"&gt;&lt;/script&gt;
   &lt;script&gt;
     var vm = new Vue({
       el: "#app",
       data: {
-        name: "VueJs",
         firstName: "zhang",
         lastName: "san",
-        counter: 100,
+      },
+      computed: {
+        fullName: function () {
+          return this.firstName + " " + this.lastName;
+        },
       },
     });
   &lt;/script&gt;
-&lt;/body&gt;</code></pre><p>通过上述基本使用样例，可以看到，在 Mustache 语法中，可以有以下用法：</p>
-<ul>
-<li>直接在标签中插入。</li>
-<li>使用两个 Mustache 进行拼接。</li>
-<li>在 Mustache 中使用表达式。</li>
-</ul>
-<h3 id="v-once-指令"><a href="#v-once-指令" class="headerlink" title="v-once 指令"></a>v-once 指令</h3><p>当某些情况下，可能不希望界面随意的跟随数据改变，就可以使用 <code>v-once</code> 指令。</p>
-<ul>
-<li>该指令后面不需要跟随任何表达式（比如之前的 <code>v-for</code> 后面是有表达式的）。</li>
-<li>该指令表示元素和组件只渲染一次，不会随着数据的改变而改变。</li>
-</ul>
-<p>代码样例：</p>
+&lt;/body&gt;</code></pre><p>在实际应用中，我们从服务器请求的数据往往更为复杂，通过计算属性的参与，将会更加方便。例如：</p>
+<pre><code>&lt;body&gt;
+  &lt;div id="app"&gt;图书的总价格为{{tatalPrice}}元&lt;/div&gt;
+  &lt;script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"&gt;&lt;/script&gt;
+  &lt;script&gt;
+    var vm = new Vue({
+      el: "#app",
+      data: {
+        books: [
+          { id: 100, name: "西游记", price: 180 },
+          { id: 101, name: "红楼梦", price: 165 },
+          { id: 102, name: "三国演义", price: 200 },
+          { id: 103, name: "水浒传", price: 190 },
+        ],
+      },
+      computed: {
+        tatalPrice: function () {
+          let result = 0;
+          for (let book of this.books) {
+            result += book.price;
+          }
+          return result;
+        },
+      },
+    });
+  &lt;/script&gt;
+&lt;/body&gt;</code></pre><h3 id="计算属性的-setter-和-getter"><a href="#计算属性的-setter-和-getter" class="headerlink" title="计算属性的 setter 和 getter"></a>计算属性的 setter 和 getter</h3><p>每个计算属性都包含一个 getter 和一个 setter。</p>
+<p>之前的计算属性写法为简写写法，完整的写法如下：</p>
+<pre><code>&lt;body&gt;
+  &lt;div id="app"&gt;{{fullName}}&lt;/div&gt;
+  &lt;script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"&gt;&lt;/script&gt;
+  &lt;script&gt;
+    var vm = new Vue({
+      el: "#app",
+      data: {
+        firstName: "zhang",
+        lastName: "san",
+      },
+      computed: {
+        fullName: {
+          set: function () {},
+          get: function () {
+            return this.firstName + " " + this.lastName;
+          },
+        },
+      },
+    });
+  &lt;/script&gt;
+&lt;/body&gt;</code></pre><p>计算属性一般没有 setter 方法，是只读属性，简写为：</p>
+<pre><code>computed: {
+        fullName: {
+          get: function () {
+            return this.firstName + " " + this.lastName;
+          },
+        },</code></pre><p>再进一步简写为：</p>
+<pre><code>computed: {
+        fullName: function () {
+            return this.firstName + " " + this.lastName;
+          },
+        },</code></pre><p>因此，计算属性在使用时，不需要加括号，他不是一个方法，是一个属性，是属性中只有一个 getter 方法，getter 方法的名称被隐藏了。</p>
+<p>在上面的例子中，只是使用了 getter 来读取，在某些情况下，也可以提供一个 setter 方法（不常用），样例如下：</p>
+<pre><code>&lt;body&gt;
+  &lt;div id="app"&gt;{{fullName}}&lt;/div&gt;
+  &lt;script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"&gt;&lt;/script&gt;
+  &lt;script&gt;
+    var vm = new Vue({
+      el: "#app",
+      data: {
+        firstName: "zhang",
+        lastName: "san",
+      },
+      computed: {
+        fullName: {
+          set: function (newVule) {
+            const names = newVule.split(" ");
+            this.firstName = names[0];
+            this.lastName = names[1];
+          },
+          get: function () {
+            return this.firstName + " " + this.lastName;
+          },
+        },
+      },
+    });
+  &lt;/script&gt;
+&lt;/body&gt;</code></pre><p>在开发者模式中给fullName赋值为新的值，则会根据新值渲染界面。</p>
+<p><img src="/medias/loading/orange.square-circle-preloader.svg" data-original="https://i.loli.net/2020/10/22/7ujB81SKabvCp2O.png" alt="计算属性的setter"></p>
+<h3 id="计算属性和-methods-的对比"><a href="#计算属性和-methods-的对比" class="headerlink" title="计算属性和 methods 的对比"></a>计算属性和 methods 的对比</h3><p>计算属性中的代码放到 methods 里面，也能实现效果，那么这两个有什么区别呢？</p>
+<pre><code>&lt;body&gt;
+  &lt;div id="app"&gt;{{getFullName}}&lt;/div&gt;
+  &lt;script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"&gt;&lt;/script&gt;
+  &lt;script&gt;
+    var vm = new Vue({
+      el: "#app",
+      data: {
+        firstName: "zhang",
+        lastName: "san",
+      },
+      methods: {
+        getFullName: function () {
+          return this.firstName + " " + this.lastName;
+        },
+      },
+    });
+  &lt;/script&gt;
+&lt;/body&gt;</code></pre><p>在多次执行计算属性和methods方法时，可以做以下对比：</p>
 <pre><code>&lt;body&gt;
   &lt;div id="app"&gt;
-    &lt;div&gt;{{msg}}&lt;/div&gt;
-    &lt;div v-once&gt;{{msg}}&lt;/div&gt;
+    &lt;div&gt;{{fullName}}&lt;/div&gt;
+    &lt;div&gt;{{fullName}}&lt;/div&gt;
+    &lt;div&gt;{{fullName}}&lt;/div&gt;
+    &lt;div&gt;{{fullName}}&lt;/div&gt;
+    &lt;div&gt;{{getFullName()}}&lt;/div&gt;
+    &lt;div&gt;{{getFullName()}}&lt;/div&gt;
+    &lt;div&gt;{{getFullName()}}&lt;/div&gt;
+    &lt;div&gt;{{getFullName()}}&lt;/div&gt;
   &lt;/div&gt;
   &lt;script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"&gt;&lt;/script&gt;
   &lt;script&gt;
     var vm = new Vue({
       el: "#app",
       data: {
-        msg: "Vuejs",
+        firstName: "zhang",
+        lastName: "san",
+      },
+      computed: {
+        fullName: function () {
+          console.log("执行了computed");
+          return this.firstName + " " + this.lastName;
+        },
+      },
+      methods: {
+        getFullName: function () {
+          console.log("执行了methods");
+          return this.firstName + " " + this.lastName;
+        },
       },
     });
   &lt;/script&gt;
-&lt;/body&gt;</code></pre><p>运行结果：<br><img src="/medias/loading/orange.square-circle-preloader.svg" data-original="https://i.loli.net/2020/10/21/n8XwKvfopbhYDqA.png" alt="v-once 运行结果.png"></p>
-<h3 id="v-html-指令"><a href="#v-html-指令" class="headerlink" title="v-html 指令"></a>v-html 指令</h3><p>当某些情况下，从服务器请求到的数据本身就是一个 HTML 代码。</p>
-<p>如果直接通过 Mustache 来输出，会将 HTML 代码一并输出，但是我们希望的是按照 HTML 格式进行解析，并且显示对应的内容。</p>
-<p>如果我们希望解析出 HTML 展示，就可以使用 <code>v-html</code> 指令，该指令后面旺旺跟上一个 string 类型，vue 实例对象会将 string 的 html 解析出来并进行数据渲染。</p>
-<p>代码样例：</p>
-<pre><code>&lt;body&gt;
-  &lt;div id="app"&gt;
-    &lt;div&gt;{{url}}&lt;/div&gt;
-    &lt;div v-html="url"&gt;&lt;/div&gt;
-  &lt;/div&gt;
-  &lt;script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"&gt;&lt;/script&gt;
-  &lt;script&gt;
-    var vm = new Vue({
-      el: "#app",
-      data: {
-        url: '&lt;a href="https://www.baidu.com/"&gt;百度一下&lt;/a&gt;',
-      },
-    });
-  &lt;/script&gt;
-&lt;/body&gt;</code></pre><p>执行结果：</p>
-<p><img src="/medias/loading/orange.square-circle-preloader.svg" data-original="https://i.loli.net/2020/10/21/E5RY926P3ps4TiU.png" alt="v-html 运行结果.png"></p>
-<h3 id="v-text-指令"><a href="#v-text-指令" class="headerlink" title="v-text 指令"></a>v-text 指令</h3><p>v-text 作用和 Mustache 比较相似：都是用于将数据显示在界面中。</p>
-<p>通常情况下，接受一个 string 类型。</p>
-<p>代码样例：</p>
-<pre><code>&lt;body&gt;
-  &lt;div id="app"&gt;
-    &lt;div&gt;{{msg}}&lt;/div&gt;
-    &lt;div v-text="msg"&gt;&lt;/div&gt;
-  &lt;/div&gt;
-  &lt;script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"&gt;&lt;/script&gt;
-  &lt;script&gt;
-    var vm = new Vue({
-      el: "#app",
-      data: {
-        msg: "hello world",
-      },
-    });
-  &lt;/script&gt;
-&lt;/body&gt;</code></pre><p>执行结果：</p>
-<p><img src="/medias/loading/orange.square-circle-preloader.svg" data-original="https://i.loli.net/2020/10/21/5Onua6JkLmU7YMo.png" alt="v-text 运行结果.png"></p>
-<blockquote>
-<p>v-text 和 Mustache （双大括号）结果一样，需要注意的是，当使用 Mustache 时，可以进行数据的拼接等操作，而 v-text 则不可以。</p>
-</blockquote>
-<h3 id="v-pre-指令"><a href="#v-pre-指令" class="headerlink" title="v-pre 指令"></a>v-pre 指令</h3><p>当不需要解析 Mustache 语法时，可以使用 v-pre 来跳过这个元素和它子元素的编译过程，用于显示原本的 Mustache 语法。</p>
-<p>比如下面的代码：</p>
-<p>第一个 div 元素中的内容会被编译解析出来对应的内容。</p>
-<p>第二个 div 元素中会直接显示 。</p>
-<p>代码样例：</p>
-<pre><code>&lt;body&gt;
-  &lt;div id="app"&gt;
-    &lt;div&gt;{{msg}}&lt;/div&gt;
-    &lt;div v-pre&gt;{{msg}}&lt;/div&gt;
-  &lt;/div&gt;
-  &lt;script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"&gt;&lt;/script&gt;
-  &lt;script&gt;
-    var vm = new Vue({
-      el: "#app",
-      data: {
-        msg: "hello world",
-      },
-    });
-  &lt;/script&gt;
-&lt;/body&gt;</code></pre><p>执行结果：</p>
-<p><img src="/medias/loading/orange.square-circle-preloader.svg" data-original="https://i.loli.net/2020/10/21/U8qac4IXSwMPCKd.png" alt="v-pre 运行结果.png"></p>
-<h3 id="v-cloak-指令"><a href="#v-cloak-指令" class="headerlink" title="v-cloak 指令"></a>v-cloak 指令</h3><p>由于浏览器是先加载 HTML 结构，再渲染数据，所以，当频繁刷新页面时，可以看到标签的闪动，此问题可通过 <code>v-cloak</code> 指令进行解决。</p>
-<p>这个指令保持在元素上直到关联实例结束编译。和 CSS 规则如 <code>[v-cloak] { display: none }</code> 一起用时，这个指令可以隐藏未编译的 Mustache 标签直到实例准备完毕。</p>
-<p>代码样例：</p>
-<ul>
-<li>CSS 代码</li>
-</ul>
-<pre><code>&lt;style&gt;
-  [v-cloak] {
-    display: none;
-  }
-&lt;/style&gt;</code></pre><ul>
-<li>HTML 代码</li>
-</ul>
-<pre><code>&lt;body&gt;
-  &lt;div id="app"&gt;
-    &lt;div v-cloak&gt;{{msg}}&lt;/div&gt;
-  &lt;/div&gt;
-  &lt;script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"&gt;&lt;/script&gt;
-  &lt;script&gt;
-    var vm = new Vue({
-      el: "#app",
-      data: {
-        msg: "hello world",
-      },
-    });
-  &lt;/script&gt;
-&lt;/body&gt;</code></pre><script>
+&lt;/body&gt;</code></pre><p>执行结果比较：</p>
+<p><img src="/medias/loading/orange.square-circle-preloader.svg" data-original="https://i.loli.net/2020/10/22/6bh2pyMPTjHFnID.png" alt="computed和methods的比较"></p>
+<p>通过上述代码的比较，可以发现，计算属性的效率比 methods 的效率更高，在频繁使用时只执行一次。</p>
+<p>当计算属性中的参数不变时，计算属性的结果会被Vue内部缓存，在每次使用时就不再调用计算，直接返回结果。</p>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -756,12 +778,12 @@ Mustache 基本使用我们可以像下面这样使用，并且数据是响应�
                                     <span class="chip bg-color">Vue</span>
                                 </a>
                             
-                                <a href="/tags/Mustache/">
-                                    <span class="chip bg-color">Mustache</span>
+                                <a href="/tags/%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7/">
+                                    <span class="chip bg-color">计算属性</span>
                                 </a>
                             
-                                <a href="/tags/%E6%8F%92%E5%80%BC/">
-                                    <span class="chip bg-color">插值</span>
+                                <a href="/tags/computed/">
+                                    <span class="chip bg-color">computed</span>
                                 </a>
                             
                         </div>
@@ -837,9 +859,73 @@ Mustache 基本使用我们可以像下面这样使用，并且数据是响应�
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-            <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
                 <div class="article-badge left-badge text-color">
-                    <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                    <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+                </div>
+                <div class="card">
+                    <a href="/posts/25941.html">
+                        <div class="card-image">
+                            
+                                
+                                <img src="/medias/featureimages/24.jpg" class="responsive-img" alt="Vue 属性操作 --- computed">
+                            
+                            <span class="card-title">Vue 属性操作 --- computed</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                计算属性介绍在模板中可以直接通过插值语法显示一些 data 中的数据，但是在某些情况下，我们可能需要对数据进行一些转化后再显示，或者需要将多个数据结合起来进行显示。所以需要用到计算属性。
+计算属性基本用法比如我们有 firstName 和 
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-10-22
+                            </span>
+                            <span class="publish-author">
+                                
+                                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                    
+                                        <a href="/categories/Vue-js/" class="post-category">
+                                    Vue.js
+                                </a>
+                                    
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                        <div class="card-action article-tags">
+                            
+                                <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                                    <span class="chip bg-color">前端</span>
+                                </a>
+                            
+                                <a href="/tags/Vue/">
+                                    <span class="chip bg-color">Vue</span>
+                                </a>
+                            
+                                <a href="/tags/%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7/">
+                                    <span class="chip bg-color">计算属性</span>
+                                </a>
+                            
+                                <a href="/tags/computed/">
+                                    <span class="chip bg-color">computed</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+            </div>
+        
+        
+            <div class="article col s12 m6" data-aos="fade-up">
+                <div class="article-badge right-badge text-color">
+                    下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+                </div>
                 <div class="card">
                     <a href="/posts/3718.html">
                         <div class="card-image">
@@ -857,9 +943,9 @@ Mustache 基本使用我们可以像下面这样使用，并且数据是响应�
                             
                         </div>
                         <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-10-21
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-10-21
+                            </span>
                             <span class="publish-author">
                                 
                                     <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -897,64 +983,6 @@ Mustache 基本使用我们可以像下面这样使用，并且数据是响应�
                             
                                 <a href="/tags/Vue-%E5%B1%9E%E6%80%A7%E6%93%8D%E4%BD%9C/">
                                     <span class="chip bg-color">Vue 属性操作</span>
-                                </a>
-                            
-                        </div>
-                    
-                </div>
-            </div>
-        
-        
-            <div class="article col s12 m6" data-aos="fade-up">
-                <div class="article-badge right-badge text-color">
-                    下一篇&nbsp;<i class="fa fa-chevron-right"></i>
-                </div>
-                <div class="card">
-                    <a href="/posts/844.html">
-                        <div class="card-image">
-                            
-                                
-                                <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="MVVM 框架相关">
-                            
-                            <span class="card-title">MVVM 框架相关</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                MVVM 框架相关MVVM 是 MVC 的增强版，实质上和 MVC 没有本质区别，只是代码的位置变动而已，这是我对 MVVM 的定义，如果你不知道什么是 MVC ，请往下看。
-MVC 简介Model、View、Controller，分别表示
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-10-20
-                            </span>
-                            <span class="publish-author">
-                                
-                                    <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                    
-                                        <a href="/categories/Vue-js/" class="post-category">
-                                    Vue.js
-                                </a>
-                                    
-                                
-                            </span>
-                        </div>
-                    </div>
-                    
-                        <div class="card-action article-tags">
-                            
-                                <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                                    <span class="chip bg-color">前端</span>
-                                </a>
-                            
-                                <a href="/tags/Vue/">
-                                    <span class="chip bg-color">Vue</span>
-                                </a>
-                            
-                                <a href="/tags/MVVM/">
-                                    <span class="chip bg-color">MVVM</span>
                                 </a>
                             
                         </div>

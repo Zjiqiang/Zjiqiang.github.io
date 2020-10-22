@@ -506,12 +506,12 @@
                                     <span class="chip bg-color">前端</span>
                                 </a>
                             
-                                <a href="/tags/%E6%A1%86%E6%9E%B6/">
-                                    <span class="chip bg-color">框架</span>
-                                </a>
-                            
                                 <a href="/tags/Vue/">
                                     <span class="chip bg-color">Vue</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%A1%86%E6%9E%B6/">
+                                    <span class="chip bg-color">框架</span>
                                 </a>
                             
                                 <a href="/tags/%E5%B1%9E%E6%80%A7%E6%93%8D%E4%BD%9C/">
@@ -554,21 +554,21 @@
                 
                     <div class="post-date info-break-policy">
                         <i class="fa fa-calendar-check-o fa-fw"></i>更新日期:&nbsp;&nbsp;
-                        2020-10-21
+                        2020-10-22
                     </div>
                 
 
                 
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        988
+                        1.4k
                     </div>
                 
 
                 
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        4 分
+                        6 分
                     </div>
                 
 
@@ -653,7 +653,7 @@
           isHide: false,
           isThick: true
       },
-      methods: {
+      computed: {
           classes: function(){
               return {
                   active: this.isActive,
@@ -663,8 +663,48 @@
           },
       },
      });</code></pre><blockquote>
-<p>在上述动态绑定class中，是将对象作为 class 的属性值，其实还可以将数组作为 class 的属性值，如：</p>
-<pre><code>&lt;h2 :class="[类名1, 类名2]"&gt;hello world&lt;/h2&gt;</code></pre><p>需要动态绑定class类时，只需要修改数组就可以，但是这种用法不常用。</p>
+<p>在上述动态绑定 class 中，是将对象作为 class 的属性值，其实还可以将数组作为 class 的属性值，如：</p>
+<pre><code>&lt;h2 :class="[类名1, 类名2]"&gt;hello world&lt;/h2&gt;</code></pre><p>需要动态绑定 class 类时，只需要修改数组就可以，但是这种用法不常用。</p>
+</blockquote>
+<h3 id="v-bind-动态绑定-style"><a href="#v-bind-动态绑定-style" class="headerlink" title="v-bind 动态绑定 style"></a>v-bind 动态绑定 style</h3><p>除了 v-bind 绑定 class 外，还可以直接利用 v-bind 来绑定一些 CSS 内联样式。</p>
+<p>类似动态绑定 class ，动态绑定 style 的语法如下：</p>
+<pre><code>&lt;h2 :style="{key(属性名): value（属性值）}"&gt;hello world&lt;/h2&gt;</code></pre><p>具体样例如：</p>
+<pre><code>&lt;h2 :style="{font-size: '18px'}"&gt;hello world&lt;/h2&gt;</code></pre><blockquote>
+<ul>
+<li>属性名可以采用驼峰命名法或连接符（-）写法。如，上述代码中属性名还可以写作fontSize。</li>
+<li>属性值需要使用引号引起来，否则，在 Vue 语法中，会将属性值作为一个变量，在 Vue 对象实例中去寻找从而报错。</li>
+</ul>
+</blockquote>
+<p>上述做法只是最基本的语法应用，但如此一来，样式仍是写死在行内样式中，无法灵活的动态绑定 style ，因此，我们可以改进如下：</p>
+<p>HTML 代码：</p>
+<pre><code>&lt;h2 :style="{font-size: finalSize}"&gt;hello world&lt;/h2&gt;</code></pre><p>Vue 代码：</p>
+<pre><code>var vm = new Vue({
+      el: "#app",
+      data: {
+          finalSize: '50px'
+      }
+     })</code></pre><p>当 Vue 实例对象的属性值不带单位时，可以通过字符串隐式转换拼接单位：</p>
+<pre><code>&lt;h2 :style="{font-size: finalSize + 'px'}"&gt;hello world&lt;/h2&gt;</code></pre><p>当绑定的 style 非常复杂时，可以抽取出来到 computed 中，例如：</p>
+<p>HTML 代码：</p>
+<pre><code>&lt;h2 :style="styles"&gt;hello world&lt;/h2&gt;</code></pre><p>Vue代码：</p>
+<pre><code>var vm = new Vue({
+      el: "#app",
+      data: {
+          finalSize: '100px',
+          finalColor: 'red'
+      },
+      computed: {
+          styles: function(){
+              return {
+                  fontSize: this.finalSize,
+                  color: this.finalColor
+              };
+          },
+      },
+     });</code></pre><blockquote>
+<p> 在上述动态绑定 style 中，是将对象作为 style 的属性值，其实还可以将数组作为 style 的属性值，如：</p>
+<pre><code>&lt;h2 :style="[style1, style2, style3]"&gt;hello world&lt;/h2&gt;</code></pre><p>style 的具体样式在 Vue 的数据中定义。</p>
+<p>需要动态绑定 style 类时，只需要修改数组就可以，但是这种用法不常用。</p>
 </blockquote>
 <script>
         document.querySelectorAll('.github-emoji')
@@ -701,12 +741,12 @@
                                     <span class="chip bg-color">前端</span>
                                 </a>
                             
-                                <a href="/tags/%E6%A1%86%E6%9E%B6/">
-                                    <span class="chip bg-color">框架</span>
-                                </a>
-                            
                                 <a href="/tags/Vue/">
                                     <span class="chip bg-color">Vue</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%A1%86%E6%9E%B6/">
+                                    <span class="chip bg-color">框架</span>
                                 </a>
                             
                                 <a href="/tags/%E5%B1%9E%E6%80%A7%E6%93%8D%E4%BD%9C/">
@@ -794,30 +834,30 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-            <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article col s12 m6" data-aos="fade-up">
                 <div class="article-badge left-badge text-color">
-                    <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-                </div>
+                    <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
                 <div class="card">
-                    <a href="/posts/3718.html">
+                    <a href="/posts/25941.html">
                         <div class="card-image">
                             
                                 
-                                <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Vue 属性操作 --- v-bind 指令">
+                                <img src="/medias/featureimages/24.jpg" class="responsive-img" alt="Vue 属性操作 --- computed">
                             
-                            <span class="card-title">Vue 属性操作 --- v-bind 指令</span>
+                            <span class="card-title">Vue 属性操作 --- computed</span>
                         </div>
                     </a>
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                Vue 属性操作 --- v-bind 指令
+                                计算属性介绍在模板中可以直接通过插值语法显示一些 data 中的数据，但是在某些情况下，我们可能需要对数据进行一些转化后再显示，或者需要将多个数据结合起来进行显示。所以需要用到计算属性。
+计算属性基本用法比如我们有 firstName 和 
                             
                         </div>
                         <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-10-21
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-10-22
+                        </span>
                             <span class="publish-author">
                                 
                                     <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -830,7 +870,6 @@
                             </span>
                         </div>
                     </div>
-
                     
                         <div class="card-action article-tags">
                             
@@ -838,24 +877,16 @@
                                     <span class="chip bg-color">前端</span>
                                 </a>
                             
-                                <a href="/tags/%E6%A1%86%E6%9E%B6/">
-                                    <span class="chip bg-color">框架</span>
-                                </a>
-                            
                                 <a href="/tags/Vue/">
                                     <span class="chip bg-color">Vue</span>
                                 </a>
                             
-                                <a href="/tags/%E5%B1%9E%E6%80%A7%E6%93%8D%E4%BD%9C/">
-                                    <span class="chip bg-color">属性操作</span>
+                                <a href="/tags/%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7/">
+                                    <span class="chip bg-color">计算属性</span>
                                 </a>
                             
-                                <a href="/tags/v-bind/">
-                                    <span class="chip bg-color">v-bind</span>
-                                </a>
-                            
-                                <a href="/tags/Vue-%E5%B1%9E%E6%80%A7%E6%93%8D%E4%BD%9C/">
-                                    <span class="chip bg-color">Vue 属性操作</span>
+                                <a href="/tags/computed/">
+                                    <span class="chip bg-color">computed</span>
                                 </a>
                             
                         </div>
@@ -881,7 +912,9 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                Vue 数据操作 --- Mustache 语法
+                                Vue 数据操作 — Mustache如何将 data 中的文本数据插入到 HTML 中呢 ？可以通过 Mustache 语法（也就是双大括号）。
+Mustache 基本使用我们可以像下面这样使用，并且数据是响应的：
+&lt;body&gt
                             
                         </div>
                         <div class="publish-info">
@@ -907,10 +940,6 @@
                                     <span class="chip bg-color">前端</span>
                                 </a>
                             
-                                <a href="/tags/%E6%A1%86%E6%9E%B6/">
-                                    <span class="chip bg-color">框架</span>
-                                </a>
-                            
                                 <a href="/tags/Vue/">
                                     <span class="chip bg-color">Vue</span>
                                 </a>
@@ -921,10 +950,6 @@
                             
                                 <a href="/tags/%E6%8F%92%E5%80%BC/">
                                     <span class="chip bg-color">插值</span>
-                                </a>
-                            
-                                <a href="/tags/Vue-%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C/">
-                                    <span class="chip bg-color">Vue 数据操作</span>
                                 </a>
                             
                         </div>
@@ -1125,7 +1150,7 @@
             
                 
                     &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                            class="white-color">3.9k</span>&nbsp;字
+                            class="white-color">5.4k</span>&nbsp;字
                 
                 
                 <script>
@@ -1308,7 +1333,7 @@
 
 
 <script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1603291032414')
+  navigator.serviceWorker.register('/sw.js?t=1603350456034')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }
@@ -1333,10 +1358,10 @@
             }
           }
         });
-        </script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script><script>
+        </script><script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
 </html>
