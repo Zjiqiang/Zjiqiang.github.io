@@ -550,7 +550,7 @@
                 
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        724
+                        768
                     </div>
                 
 
@@ -624,6 +624,12 @@ console.log(name);</code></pre><p>上述代码中均能打印出 name 的值，v
 <p>在很多语言中已经存在，比如 C/C++ 中，主要的作用是将某个变量修饰为常量。</p>
 <p>在 JavaScript 中也是如此，使用 const 修饰的变量为常量，不可以再次赋值。</p>
 <p>当我们修饰的变量不会被再次赋值时，就可以使用 const 来保证数据的安全性。</p>
+<p>const的注意点：</p>
+<ul>
+<li>必须进行初始化。</li>
+<li>不能被修改。</li>
+<li>常量的含义是指向的对象不能修改，但可以改变对象内部的属性。</li>
+</ul>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -740,44 +746,46 @@ console.log(name);</code></pre><p>上述代码中均能打印出 name 的值，v
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-            <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article col s12 m6" data-aos="fade-up">
                 <div class="article-badge left-badge text-color">
-                    <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-                </div>
+                    <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
                 <div class="card">
-                    <a href="/posts/48682.html">
+                    <a href="/posts/61223.html">
                         <div class="card-image">
                             
                                 
-                                <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="ES6的let和const使用">
+                                <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Vue 事件监听">
                             
-                            <span class="card-title">ES6的let和const使用</span>
+                            <span class="card-title">Vue 事件监听</span>
                         </div>
                     </a>
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                let 、 var 和 constvar 的设计可以看做 JavaScript 语言设计上的错误，但是这种错误多半不能修复和移除，因为需要向后兼容。
-大概十多年前，Brandan Eich 就决定修复这个问题，于是他添加了一个新的关键字：l
+                                Vue 事件监听在前端开发中，我们需要经常和用户进行交互，这个时候我们就必须监听用户发生的事件，比如点击、拖拽、键盘事件等等，在Vue中使用 v-on 指令。
+v-on 介绍：
+
+作用：绑定事件监听器
+缩写：@
+预期：Function | 
                             
                         </div>
                         <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-10-24
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-10-24
+                        </span>
                             <span class="publish-author">
                                 
                                     <i class="fa fa-bookmark fa-fw icon-category"></i>
                                     
-                                        <a href="/categories/ES6/" class="post-category">
-                                    ES6
+                                        <a href="/categories/Vue-js/" class="post-category">
+                                    Vue.js
                                 </a>
                                     
                                 
                             </span>
                         </div>
                     </div>
-
                     
                         <div class="card-action article-tags">
                             
@@ -785,12 +793,12 @@ console.log(name);</code></pre><p>上述代码中均能打印出 name 的值，v
                                     <span class="chip bg-color">前端</span>
                                 </a>
                             
-                                <a href="/tags/ES6/">
-                                    <span class="chip bg-color">ES6</span>
+                                <a href="/tags/Vue/">
+                                    <span class="chip bg-color">Vue</span>
                                 </a>
                             
-                                <a href="/tags/let/">
-                                    <span class="chip bg-color">let</span>
+                                <a href="/tags/%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC/">
+                                    <span class="chip bg-color">事件监听</span>
                                 </a>
                             
                         </div>
@@ -1053,7 +1061,7 @@ console.log(name);</code></pre><p>上述代码中均能打印出 name 的值，v
             
                 
                     &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                            class="white-color">6.2k</span>&nbsp;字
+                            class="white-color">6.9k</span>&nbsp;字
                 
                 
                 <script>
@@ -1236,7 +1244,7 @@ console.log(name);</code></pre><p>上述代码中均能打印出 name 的值，v
 
 
 <script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1603524217343')
+  navigator.serviceWorker.register('/sw.js?t=1603539191072')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }
