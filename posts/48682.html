@@ -573,7 +573,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="let-、-var-和-const"><a href="#let-、-var-和-const" class="headerlink" title="let 、 var 和 const"></a>let 、 var 和 const</h2><p>var 的设计可以看做 JavaScript 语言设计上的错误，但是这种错误多半不能修复和移除，因为需要向后兼容。</p>
-<p>大概十多年前，Brandan Eich 就决定修复这个问题，于是他添加了一个新的关键字：let。</p>
+<p>大概十多年前，Brandan Eich 就决定修复这个问题，于是他添加了一个新的关键字：<code>let</code>。</p>
 <p>我们可以将 let 看成更加完美的 var 。</p>
 <h3 id="ES5-的作用域"><a href="#ES5-的作用域" class="headerlink" title="ES5 的作用域"></a>ES5 的作用域</h3><p> JavaScript 中使用 var 来声明一个变量时，变量的作用域主要是和函数的定义有关。在 ES5 中只有函数有作用域的。</p>
 <p>变量作用域是指变量在什么范围内是可用的。而对于 var 来说，针对块定义来说是没有作用域的。比如：</p>
@@ -581,7 +581,7 @@
   var name = 'apple';
   console.log(name);
 }
-console.log(name);</code></pre><p>上述代码中均能打印出 name 的值，var的定义不受大括号（{}）的限制、另外在使用 if、for 时，往往会引入一些问题。</p>
+console.log(name);</code></pre><p>上述代码中均能打印出 name 的值，var的定义不受大括号（{}）的限制、另外在使用 <code>if</code>、<code>for</code> 时，往往会引入一些问题。</p>
 <p>比如：</p>
 <pre><code>&lt;body&gt;
   &lt;button&gt;按钮1&lt;/button&gt;
@@ -611,20 +611,20 @@ console.log(name);</code></pre><p>上述代码中均能打印出 name 的值，v
   }
 &lt;/script&gt;</code></pre><p>执行结果如下：</p>
 <p><img src="/medias/loading/orange.square-circle-preloader.svg" data-original="https://i.loli.net/2020/10/24/KHXkEVntNAWpT2g.png" alt="闭包解决 for 作用域问题.png"></p>
-<p>那么，为什么闭包可以解决 for 的作用域问题呢？</p>
-<p>答案是因为：闭包是一个函数，函数是有作用域的，函数里的 i 不会被 for 循环修改。</p>
-<h3 id="ES6-的作用域"><a href="#ES6-的作用域" class="headerlink" title="ES6 的作用域"></a>ES6 的作用域</h3><p>由于 ES5 之前 if 和 for 都没有块级作用域的概念，所以在很多时候，我们都必须借助于 function 的作用域来解决引用外面变量的问题。</p>
-<p>所以在 SE6 中加入了 let ，而let是有 if 和 for 的块级 作用域的。</p>
+<p>那么，为什么闭包可以解决 <code>for</code> 的作用域问题呢？</p>
+<p>答案是因为：闭包是一个函数，函数是有作用域的，函数里的 <code>i</code> 不会被 <code>for</code> 循环修改。</p>
+<h3 id="ES6-的作用域"><a href="#ES6-的作用域" class="headerlink" title="ES6 的作用域"></a>ES6 的作用域</h3><p>由于 ES5 之前 <code>if</code> 和 <code>for</code> 都没有块级作用域的概念，所以在很多时候，我们都必须借助于 <code>function</code> 的作用域来解决引用外面变量的问题。</p>
+<p>所以在 SE6 中加入了 <code>let</code> ，而 <code>let</code> 是有 <code>if</code> 和 <code>for</code> 的块级作用域的。</p>
 <p>上边的代码可以改写为：</p>
 <pre><code>for (let i = 0; i &lt; btns.length; i++) {
       btns[i].onclick = function () {
         alert("点击了按钮" + (i + 1));
       };
-    }</code></pre><h3 id="ES6-的-const"><a href="#ES6-的-const" class="headerlink" title="ES6 的 const"></a>ES6 的 const</h3><p>const关键字：</p>
+    }</code></pre><h3 id="ES6-的-const"><a href="#ES6-的-const" class="headerlink" title="ES6 的 const"></a>ES6 的 const</h3><p>const 关键字：</p>
 <p>在很多语言中已经存在，比如 C/C++ 中，主要的作用是将某个变量修饰为常量。</p>
-<p>在 JavaScript 中也是如此，使用 const 修饰的变量为常量，不可以再次赋值。</p>
-<p>当我们修饰的变量不会被再次赋值时，就可以使用 const 来保证数据的安全性。</p>
-<p>const的注意点：</p>
+<p>在 JavaScript 中也是如此，使用 <code>const</code> 修饰的变量为常量，不可以再次赋值。</p>
+<p>当我们修饰的变量不会被再次赋值时，就可以使用 <code>const</code> 来保证数据的安全性。</p>
+<p>const 的注意点：</p>
 <ul>
 <li>必须进行初始化。</li>
 <li>不能被修改。</li>
@@ -1244,7 +1244,7 @@ v-on 介绍：
 
 
 <script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1603539213191')
+  navigator.serviceWorker.register('/sw.js?t=1603539997415')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }
@@ -1269,10 +1269,10 @@ v-on 介绍：
             }
           }
         });
-        </script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script><script>
+        </script><script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
 </html>
