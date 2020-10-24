@@ -543,7 +543,7 @@ MVC 简介Model、View、Controller，分别表示">
                 
                     <div class="post-date info-break-policy">
                         <i class="fa fa-calendar-check-o fa-fw"></i>更新日期:&nbsp;&nbsp;
-                        2020-10-22
+                        2020-10-24
                     </div>
                 
 
@@ -581,7 +581,7 @@ MVC 简介Model、View、Controller，分别表示">
 <p>Controller：控制器（大管家角色），监听模型数据的改变和控制视图行为、处理用户交互。</p>
 <h3 id="MVVM-简介"><a href="#MVVM-简介" class="headerlink" title="MVVM 简介"></a>MVVM 简介</h3><p>既然 MVC 这么好，那为什么还要使用 MVVM ？我们先来看一下 MVVM 是什么。</p>
 <p><img src="/medias/loading/orange.square-circle-preloader.svg" data-original="https://i.loli.net/2020/10/20/DMycpBkCPvKH6lu.png" alt="mvvm.png"></p>
-<p>上图描述了 MVVM 一个基本结构，发现<strong>比 MVC 架构中多了一个 ViewModel **，这个 ViewModel 是 MVVM 相对于 MVC 改进的核心思想。在开发过程中，由于需求的变更或添加，项目的复杂度越来越高，代码量越来越大，此时我们会发现 MVC 维护起来有些吃力，由于 Controller 主要用来处理各种逻辑和数据转化，复杂业务逻辑界面的 Controller 非常庞大，维护困难，所以需要</strong>将 Controller 的数据和逻辑处理部分从中抽离出来，用一个专门的对象去管理，这个对象就是 ViewModel ，是 Model 和 Controller 之间的一座桥梁<strong>。这样拆分后， Controller 中的代码变得非常少，变得易于测试和维护，只需要 **Controller 和 ViewModel 做数据绑定</strong>即可，这也就催生了 MVVM 的热潮。</p>
+<p>上图描述了 MVVM 一个基本结构，发现比 MVC 架构中<strong>多了 一个 ViewModel</strong>，这个 ViewModel 是 MVVM 相对于 MVC 改进的核心思想。在开发过程中，由于需求的变更或添加，项目的复杂度越来越高，代码量越来越大，此时我们会发现 MVC 维护起来有些吃力，由于 Controller 主要用来处理各种逻辑和数据转化，复杂业务逻辑界面的 Controller 非常庞大，维护困难，所以需要<strong>将 Controller 的数据和逻辑处理部分从中抽离出来，用一个专门的对象去管理，这个对象就是 ViewModel ，是 Model 和 Controller 之间的一座桥梁</strong>。这样拆分后， Controller 中的代码变得非常少，变得易于测试和维护，只需要 <strong>Controller 和 ViewModel 做数据绑定</strong>即可，这也就催生了 MVVM 的热潮。</p>
 <blockquote>
 <p>以上内容来自转载：</p>
 <p>作者：Niuszeng<br>链接：<a href="https://www.jianshu.com/p/6aeeecd64dcf" target="_blank" rel="noopener">https://www.jianshu.com/p/6aeeecd64dcf</a><br>来源：简书</p>
@@ -1216,7 +1216,7 @@ Vue 被设计
 
 
 <script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1603539997415')
+  navigator.serviceWorker.register('/sw.js?t=1603541189733')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }
