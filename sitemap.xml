@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>zhangjiqiang.vip/posts/48682.html</loc>
+    
+    <lastmod>2020-10-24</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>zhangjiqiang.vip/posts/3718.html</loc>
     
     <lastmod>2020-10-22</lastmod>
@@ -65,13 +72,6 @@
   </url>
   
   <url>
-    <loc>zhangjiqiang.vip/archives/index.html</loc>
-    
-    <lastmod>2020-06-14</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>zhangjiqiang.vip/contact/index.html</loc>
     
     <lastmod>2020-06-14</lastmod>
@@ -85,74 +85,95 @@
     
   </url>
   
+  <url>
+    <loc>zhangjiqiang.vip/archives/index.html</loc>
+    
+    <lastmod>2020-06-14</lastmod>
+    
+  </url>
+  
 
   <url>
     <loc>zhangjiqiang.vip</loc>
-    <lastmod>2020-10-22</lastmod>
+    <lastmod>2020-10-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
-    <loc>zhangjiqiang.vip/tags/Vue/</loc>
-    <lastmod>2020-10-22</lastmod>
+    <loc>zhangjiqiang.vip/tags/%E5%89%8D%E7%AB%AF/</loc>
+    <lastmod>2020-10-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>zhangjiqiang.vip/tags/%E5%89%8D%E7%AB%AF/</loc>
-    <lastmod>2020-10-22</lastmod>
+    <loc>zhangjiqiang.vip/tags/ES6/</loc>
+    <lastmod>2020-10-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>zhangjiqiang.vip/tags/let/</loc>
+    <lastmod>2020-10-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>zhangjiqiang.vip/tags/Vue/</loc>
+    <lastmod>2020-10-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>zhangjiqiang.vip/tags/%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7/</loc>
-    <lastmod>2020-10-22</lastmod>
+    <lastmod>2020-10-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>zhangjiqiang.vip/tags/computed/</loc>
-    <lastmod>2020-10-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>zhangjiqiang.vip/tags/Mustache/</loc>
-    <lastmod>2020-10-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>zhangjiqiang.vip/tags/%E6%8F%92%E5%80%BC/</loc>
-    <lastmod>2020-10-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>zhangjiqiang.vip/tags/%E5%B1%9E%E6%80%A7%E6%93%8D%E4%BD%9C/</loc>
-    <lastmod>2020-10-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>zhangjiqiang.vip/tags/v-bind/</loc>
-    <lastmod>2020-10-22</lastmod>
+    <lastmod>2020-10-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>zhangjiqiang.vip/tags/MVVM/</loc>
-    <lastmod>2020-10-22</lastmod>
+    <lastmod>2020-10-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>zhangjiqiang.vip/tags/%E5%B1%9E%E6%80%A7%E6%93%8D%E4%BD%9C/</loc>
+    <lastmod>2020-10-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>zhangjiqiang.vip/tags/v-bind/</loc>
+    <lastmod>2020-10-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>zhangjiqiang.vip/tags/Mustache/</loc>
+    <lastmod>2020-10-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>zhangjiqiang.vip/tags/%E6%8F%92%E5%80%BC/</loc>
+    <lastmod>2020-10-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -160,8 +181,15 @@
 
   
   <url>
+    <loc>zhangjiqiang.vip/categories/ES6/</loc>
+    <lastmod>2020-10-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>zhangjiqiang.vip/categories/Vue-js/</loc>
-    <lastmod>2020-10-22</lastmod>
+    <lastmod>2020-10-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>

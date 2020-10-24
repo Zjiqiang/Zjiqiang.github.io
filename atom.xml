@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="zhangjiqiang.vip/"/>
-  <updated>2020-10-22T08:57:13.818Z</updated>
+  <updated>2020-10-24T07:16:17.400Z</updated>
   <id>zhangjiqiang.vip/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ES6块级作用于let</title>
+    <link href="zhangjiqiang.vip/posts/48682.html"/>
+    <id>zhangjiqiang.vip/posts/48682.html</id>
+    <published>2020-10-24T05:31:59.000Z</published>
+    <updated>2020-10-24T07:16:17.400Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="let-、-var-和-const"><a href="#let-、-var-和-const" class="headerlink" title="let 、 var 和 const"></a>let 、 var 和 const</h2><p>var 的设计可以看做 JavaScript 语言设计上的错误，但是这种错误多半不能修复和移除，因为需要向后兼容。</p><p>大概十多年前，Brandan Eich 就决定修复这个问题，于是他添加了一个新的关键字：let。</p><p>我们可以将 let 看成更加完美的 var 。</p><h3 id="ES5-的作用域"><a href="#ES5-的作用域" class="headerlink" title="ES5 的作用域"></a>ES5 的作用域</h3><p> JavaScript 中使用 var 来声明一个变量时，变量的作用域主要是和函数的定义有关。在 ES5 中只有函数有作用域的。</p><p>变量作用域是指变量在什么范围内是可用的。而对于 var 来说，针对块定义来说是没有作用域的。比如：</p><pre><code>{  var name = 'apple';  console.log(name);}console.log(name);</code></pre><p>上述代码中均能打印出 name 的值，var的定义不受大括号（{}）的限制、另外在使用 if、for 时，往往会引入一些问题。</p><p>比如：</p><pre><code>&lt;body&gt;  &lt;button&gt;按钮1&lt;/button&gt;  &lt;button&gt;按钮2&lt;/button&gt;  &lt;button&gt;按钮3&lt;/button&gt;  &lt;button&gt;按钮4&lt;/button&gt;  &lt;button&gt;按钮5&lt;/button&gt;  &lt;script&gt;    var btns = document.getElementsByTagName("button");    for (var i = 0; i &lt; btns.length; i++) {      btns[i].onclick = function () {        alert("点击了按钮" + i);      };    }  &lt;/script&gt;&lt;/body&gt;</code></pre><p>在上述代码中，我们期望在点击按钮时，弹出的提示是对应点击的按钮名，但是实际执行的结果却一直是<code>按钮5</code> 。</p><p><img src="/medias/loading/orange.square-circle-preloader.svg" data-original="https://i.loli.net/2020/10/24/aje264wGM5IOJCc.png" alt="var 作用域问题.png"></p><p>通常我们遇到这种问题，是使用闭包解决的，如：</p><pre><code>&lt;script&gt;  var btns = document.getElementsByTagName("button");  for (var i = 0; i &lt; btns.length; i++) {    (function (num) {      btns[i].onclick = function () {        alert("点击了按钮" + (num + 1));      };    })(i);  }&lt;/script&gt;</code></pre><p>执行结果如下：</p><p><img src="/medias/loading/orange.square-circle-preloader.svg" data-original="https://i.loli.net/2020/10/24/KHXkEVntNAWpT2g.png" alt="闭包解决 for 作用域问题.png"></p><p>那么，为什么闭包可以解决 for 的作用域问题呢？</p><p>答案是因为：闭包是一个函数，函数是有作用域的，函数里的 i 不会被 for 循环修改。</p><h3 id="ES6-的作用域"><a href="#ES6-的作用域" class="headerlink" title="ES6 的作用域"></a>ES6 的作用域</h3><p>由于 ES5 之前 if 和 for 都没有块级作用域的概念，所以在很多时候，我们都必须借助于 function 的作用域来解决引用外面变量的问题。</p><p>所以在 SE6 中加入了 let ，而let是有 if 和 for 的块级 作用域的。</p><p>上边的代码可以改写为：</p><pre><code>for (let i = 0; i &lt; btns.length; i++) {      btns[i].onclick = function () {        alert("点击了按钮" + (i + 1));      };    }</code></pre><h3 id="ES6-的-const"><a href="#ES6-的-const" class="headerlink" title="ES6 的 const"></a>ES6 的 const</h3><p>const关键字：</p><p>在很多语言中已经存在，比如 C/C++ 中，主要的作用是将某个变量修饰为常量。</p><p>在 JavaScript 中也是如此，使用 const 修饰的变量为常量，不可以再次赋值。</p><p>当我们修饰的变量不会被再次赋值时，就可以使用 const 来保证数据的安全性。</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;let-、-var-和-const&quot;&gt;&lt;a href=&quot;#let-、-var-和-const&quot; class=&quot;headerlink&quot; title=&quot;let 、 var 和 const&quot;&gt;&lt;/a&gt;let 、 var 和 const&lt;/h2&gt;&lt;p&gt;var 的设计可以看
+      
+    
+    </summary>
+    
+    
+      <category term="ES6" scheme="zhangjiqiang.vip/categories/ES6/"/>
+    
+    
+      <category term="前端" scheme="zhangjiqiang.vip/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="ES6" scheme="zhangjiqiang.vip/tags/ES6/"/>
+    
+      <category term="let" scheme="zhangjiqiang.vip/tags/let/"/>
+    
+  </entry>
   
   <entry>
     <title>Vue 属性操作 --- computed 计算属性</title>
@@ -38,9 +68,9 @@
       <category term="Vue.js" scheme="zhangjiqiang.vip/categories/Vue-js/"/>
     
     
-      <category term="Vue" scheme="zhangjiqiang.vip/tags/Vue/"/>
-    
       <category term="前端" scheme="zhangjiqiang.vip/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="Vue" scheme="zhangjiqiang.vip/tags/Vue/"/>
     
       <category term="计算属性" scheme="zhangjiqiang.vip/tags/%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7/"/>
     
@@ -70,9 +100,9 @@
       <category term="Vue.js" scheme="zhangjiqiang.vip/categories/Vue-js/"/>
     
     
-      <category term="Vue" scheme="zhangjiqiang.vip/tags/Vue/"/>
-    
       <category term="前端" scheme="zhangjiqiang.vip/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="Vue" scheme="zhangjiqiang.vip/tags/Vue/"/>
     
       <category term="属性操作" scheme="zhangjiqiang.vip/tags/%E5%B1%9E%E6%80%A7%E6%93%8D%E4%BD%9C/"/>
     
@@ -102,9 +132,9 @@
       <category term="Vue.js" scheme="zhangjiqiang.vip/categories/Vue-js/"/>
     
     
-      <category term="Vue" scheme="zhangjiqiang.vip/tags/Vue/"/>
-    
       <category term="前端" scheme="zhangjiqiang.vip/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="Vue" scheme="zhangjiqiang.vip/tags/Vue/"/>
     
       <category term="Mustache" scheme="zhangjiqiang.vip/tags/Mustache/"/>
     
@@ -134,9 +164,9 @@
       <category term="Vue.js" scheme="zhangjiqiang.vip/categories/Vue-js/"/>
     
     
-      <category term="Vue" scheme="zhangjiqiang.vip/tags/Vue/"/>
-    
       <category term="前端" scheme="zhangjiqiang.vip/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="Vue" scheme="zhangjiqiang.vip/tags/Vue/"/>
     
       <category term="MVVM" scheme="zhangjiqiang.vip/tags/MVVM/"/>
     
@@ -164,9 +194,9 @@
       <category term="Vue.js" scheme="zhangjiqiang.vip/categories/Vue-js/"/>
     
     
-      <category term="Vue" scheme="zhangjiqiang.vip/tags/Vue/"/>
-    
       <category term="前端" scheme="zhangjiqiang.vip/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="Vue" scheme="zhangjiqiang.vip/tags/Vue/"/>
     
   </entry>
   

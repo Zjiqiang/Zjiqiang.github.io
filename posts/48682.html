@@ -4,9 +4,9 @@
 
 <head><link rel=manifest href=/manifest.json>
     <meta charset="utf-8">
-    <meta name="keywords" content="computed">
-    <meta name="description" content="计算属性介绍在模板中可以直接通过插值语法显示一些 data 中的数据，但是在某些情况下，我们可能需要对数据进行一些转化后再显示，或者需要将多个数据结合起来进行显示。所以需要用到计算属性。
-计算属性基本用法比如我们有 firstName 和 ">
+    <meta name="keywords" content="let">
+    <meta name="description" content="let 、 var 和 constvar 的设计可以看做 JavaScript 语言设计上的错误，但是这种错误多半不能修复和移除，因为需要向后兼容。
+大概十多年前，Brandan Eich 就决定修复这个问题，于是他添加了一个新的关键字：l">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +15,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="theme-color" content="white"/>
-    <title>Vue 属性操作 --- computed 计算属性 | 碎碎念&amp;小强</title>
+    <title>ES6块级作用于let | 碎碎念&amp;小强</title>
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -382,12 +382,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Vue 属性操作 --- computed 计算属性</h1>
+                    <h1 class="description center-align post-title">ES6块级作用于let</h1>
                 </div>
             </div>
         </div>
@@ -507,16 +507,12 @@
                                     <span class="chip bg-color">前端</span>
                                 </a>
                             
-                                <a href="/tags/Vue/">
-                                    <span class="chip bg-color">Vue</span>
+                                <a href="/tags/ES6/">
+                                    <span class="chip bg-color">ES6</span>
                                 </a>
                             
-                                <a href="/tags/%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7/">
-                                    <span class="chip bg-color">计算属性</span>
-                                </a>
-                            
-                                <a href="/tags/computed/">
-                                    <span class="chip bg-color">computed</span>
+                                <a href="/tags/let/">
+                                    <span class="chip bg-color">let</span>
                                 </a>
                             
                         </div>
@@ -527,8 +523,8 @@
                         <div class="post-cate">
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                                <a href="/categories/Vue-js/" class="post-category">
-                                    Vue.js
+                                <a href="/categories/ES6/" class="post-category">
+                                    ES6
                                 </a>
                             
                         </div>
@@ -540,28 +536,28 @@
                 
                     <div class="post-date info-break-policy">
                         <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                        2020-10-22
+                        2020-10-24
                     </div>
                 
 
                 
                     <div class="post-date info-break-policy">
                         <i class="fa fa-calendar-check-o fa-fw"></i>更新日期:&nbsp;&nbsp;
-                        2020-10-22
+                        2020-10-24
                     </div>
                 
 
                 
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.1k
+                        724
                     </div>
                 
 
                 
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        5 分
+                        3 分
                     </div>
                 
 
@@ -576,169 +572,58 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="计算属性介绍"><a href="#计算属性介绍" class="headerlink" title="计算属性介绍"></a>计算属性介绍</h2><p>在模板中可以直接通过插值语法显示一些 data 中的数据，但是在某些情况下，我们可能需要对数据进行一些转化后再显示，或者需要将多个数据结合起来进行显示。所以需要用到计算属性。</p>
-<h3 id="计算属性基本用法"><a href="#计算属性基本用法" class="headerlink" title="计算属性基本用法"></a>计算属性基本用法</h3><p>比如我们有 firstName 和 lastName 两个变量，我们需要显示完整的名称，但是如果多个地方都需要显示完整的名称，我们就需要写多个  。</p>
-<p>我们可以将上面的代码换算成计算属性：</p>
+                <h2 id="let-、-var-和-const"><a href="#let-、-var-和-const" class="headerlink" title="let 、 var 和 const"></a>let 、 var 和 const</h2><p>var 的设计可以看做 JavaScript 语言设计上的错误，但是这种错误多半不能修复和移除，因为需要向后兼容。</p>
+<p>大概十多年前，Brandan Eich 就决定修复这个问题，于是他添加了一个新的关键字：let。</p>
+<p>我们可以将 let 看成更加完美的 var 。</p>
+<h3 id="ES5-的作用域"><a href="#ES5-的作用域" class="headerlink" title="ES5 的作用域"></a>ES5 的作用域</h3><p> JavaScript 中使用 var 来声明一个变量时，变量的作用域主要是和函数的定义有关。在 ES5 中只有函数有作用域的。</p>
+<p>变量作用域是指变量在什么范围内是可用的。而对于 var 来说，针对块定义来说是没有作用域的。比如：</p>
+<pre><code>{
+  var name = 'apple';
+  console.log(name);
+}
+console.log(name);</code></pre><p>上述代码中均能打印出 name 的值，var的定义不受大括号（{}）的限制、另外在使用 if、for 时，往往会引入一些问题。</p>
+<p>比如：</p>
 <pre><code>&lt;body&gt;
-  &lt;div id="app"&gt;{{fullName}}&lt;/div&gt;
-  &lt;script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"&gt;&lt;/script&gt;
+  &lt;button&gt;按钮1&lt;/button&gt;
+  &lt;button&gt;按钮2&lt;/button&gt;
+  &lt;button&gt;按钮3&lt;/button&gt;
+  &lt;button&gt;按钮4&lt;/button&gt;
+  &lt;button&gt;按钮5&lt;/button&gt;
   &lt;script&gt;
-    var vm = new Vue({
-      el: "#app",
-      data: {
-        firstName: "zhang",
-        lastName: "san",
-      },
-      computed: {
-        fullName: function () {
-          return this.firstName + " " + this.lastName;
-        },
-      },
-    });
+    var btns = document.getElementsByTagName("button");
+    for (var i = 0; i &lt; btns.length; i++) {
+      btns[i].onclick = function () {
+        alert("点击了按钮" + i);
+      };
+    }
   &lt;/script&gt;
-&lt;/body&gt;</code></pre><p>在实际应用中，我们从服务器请求的数据往往更为复杂，通过计算属性的参与，将会更加方便。例如：</p>
-<pre><code>&lt;body&gt;
-  &lt;div id="app"&gt;图书的总价格为{{tatalPrice}}元&lt;/div&gt;
-  &lt;script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"&gt;&lt;/script&gt;
-  &lt;script&gt;
-    var vm = new Vue({
-      el: "#app",
-      data: {
-        books: [
-          { id: 100, name: "西游记", price: 180 },
-          { id: 101, name: "红楼梦", price: 165 },
-          { id: 102, name: "三国演义", price: 200 },
-          { id: 103, name: "水浒传", price: 190 },
-        ],
-      },
-      computed: {
-        tatalPrice: function () {
-          let result = 0;
-          for (let book of this.books) {
-            result += book.price;
-          }
-          return result;
-        },
-      },
-    });
-  &lt;/script&gt;
-&lt;/body&gt;</code></pre><h3 id="计算属性的-setter-和-getter"><a href="#计算属性的-setter-和-getter" class="headerlink" title="计算属性的 setter 和 getter"></a>计算属性的 setter 和 getter</h3><p>每个计算属性都包含一个 getter 和一个 setter。</p>
-<p>之前的计算属性写法为简写写法，完整的写法如下：</p>
-<pre><code>&lt;body&gt;
-  &lt;div id="app"&gt;{{fullName}}&lt;/div&gt;
-  &lt;script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"&gt;&lt;/script&gt;
-  &lt;script&gt;
-    var vm = new Vue({
-      el: "#app",
-      data: {
-        firstName: "zhang",
-        lastName: "san",
-      },
-      computed: {
-        fullName: {
-          set: function () {},
-          get: function () {
-            return this.firstName + " " + this.lastName;
-          },
-        },
-      },
-    });
-  &lt;/script&gt;
-&lt;/body&gt;</code></pre><p>计算属性一般没有 setter 方法，是只读属性，简写为：</p>
-<pre><code>computed: {
-        fullName: {
-          get: function () {
-            return this.firstName + " " + this.lastName;
-          },
-        },</code></pre><p>再进一步简写为：</p>
-<pre><code>computed: {
-        fullName: function () {
-            return this.firstName + " " + this.lastName;
-          },
-        },</code></pre><p>因此，计算属性在使用时，不需要加括号，他不是一个方法，是一个属性，是属性中只有一个 getter 方法，getter 方法的名称被隐藏了。</p>
-<p>在上面的例子中，只是使用了 getter 来读取，在某些情况下，也可以提供一个 setter 方法（不常用），样例如下：</p>
-<pre><code>&lt;body&gt;
-  &lt;div id="app"&gt;{{fullName}}&lt;/div&gt;
-  &lt;script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"&gt;&lt;/script&gt;
-  &lt;script&gt;
-    var vm = new Vue({
-      el: "#app",
-      data: {
-        firstName: "zhang",
-        lastName: "san",
-      },
-      computed: {
-        fullName: {
-          set: function (newVule) {
-            const names = newVule.split(" ");
-            this.firstName = names[0];
-            this.lastName = names[1];
-          },
-          get: function () {
-            return this.firstName + " " + this.lastName;
-          },
-        },
-      },
-    });
-  &lt;/script&gt;
-&lt;/body&gt;</code></pre><p>在开发者模式中给fullName赋值为新的值，则会根据新值渲染界面。</p>
-<p><img src="/medias/loading/orange.square-circle-preloader.svg" data-original="https://i.loli.net/2020/10/22/7ujB81SKabvCp2O.png" alt="计算属性的setter"></p>
-<h3 id="计算属性和-methods-的对比"><a href="#计算属性和-methods-的对比" class="headerlink" title="计算属性和 methods 的对比"></a>计算属性和 methods 的对比</h3><p>计算属性中的代码放到 methods 里面，也能实现效果，那么这两个有什么区别呢？</p>
-<pre><code>&lt;body&gt;
-  &lt;div id="app"&gt;{{getFullName}}&lt;/div&gt;
-  &lt;script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"&gt;&lt;/script&gt;
-  &lt;script&gt;
-    var vm = new Vue({
-      el: "#app",
-      data: {
-        firstName: "zhang",
-        lastName: "san",
-      },
-      methods: {
-        getFullName: function () {
-          return this.firstName + " " + this.lastName;
-        },
-      },
-    });
-  &lt;/script&gt;
-&lt;/body&gt;</code></pre><p>在多次执行计算属性和methods方法时，可以做以下对比：</p>
-<pre><code>&lt;body&gt;
-  &lt;div id="app"&gt;
-    &lt;div&gt;{{fullName}}&lt;/div&gt;
-    &lt;div&gt;{{fullName}}&lt;/div&gt;
-    &lt;div&gt;{{fullName}}&lt;/div&gt;
-    &lt;div&gt;{{fullName}}&lt;/div&gt;
-    &lt;div&gt;{{getFullName()}}&lt;/div&gt;
-    &lt;div&gt;{{getFullName()}}&lt;/div&gt;
-    &lt;div&gt;{{getFullName()}}&lt;/div&gt;
-    &lt;div&gt;{{getFullName()}}&lt;/div&gt;
-  &lt;/div&gt;
-  &lt;script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"&gt;&lt;/script&gt;
-  &lt;script&gt;
-    var vm = new Vue({
-      el: "#app",
-      data: {
-        firstName: "zhang",
-        lastName: "san",
-      },
-      computed: {
-        fullName: function () {
-          console.log("执行了computed");
-          return this.firstName + " " + this.lastName;
-        },
-      },
-      methods: {
-        getFullName: function () {
-          console.log("执行了methods");
-          return this.firstName + " " + this.lastName;
-        },
-      },
-    });
-  &lt;/script&gt;
-&lt;/body&gt;</code></pre><p>执行结果比较：</p>
-<p><img src="/medias/loading/orange.square-circle-preloader.svg" data-original="https://i.loli.net/2020/10/22/6bh2pyMPTjHFnID.png" alt="computed和methods的比较"></p>
-<p>通过上述代码的比较，可以发现，计算属性的效率比 methods 的效率更高，在频繁使用时只执行一次。</p>
-<p>当计算属性中的参数不变时，计算属性的结果会被Vue内部缓存，在每次使用时就不再调用计算，直接返回结果。</p>
+&lt;/body&gt;</code></pre><p>在上述代码中，我们期望在点击按钮时，弹出的提示是对应点击的按钮名，但是实际执行的结果却一直是<code>按钮5</code> 。</p>
+<p><img src="/medias/loading/orange.square-circle-preloader.svg" data-original="https://i.loli.net/2020/10/24/aje264wGM5IOJCc.png" alt="var 作用域问题.png"></p>
+<p>通常我们遇到这种问题，是使用闭包解决的，如：</p>
+<pre><code>&lt;script&gt;
+  var btns = document.getElementsByTagName("button");
+  for (var i = 0; i &lt; btns.length; i++) {
+    (function (num) {
+      btns[i].onclick = function () {
+        alert("点击了按钮" + (num + 1));
+      };
+    })(i);
+  }
+&lt;/script&gt;</code></pre><p>执行结果如下：</p>
+<p><img src="/medias/loading/orange.square-circle-preloader.svg" data-original="https://i.loli.net/2020/10/24/KHXkEVntNAWpT2g.png" alt="闭包解决 for 作用域问题.png"></p>
+<p>那么，为什么闭包可以解决 for 的作用域问题呢？</p>
+<p>答案是因为：闭包是一个函数，函数是有作用域的，函数里的 i 不会被 for 循环修改。</p>
+<h3 id="ES6-的作用域"><a href="#ES6-的作用域" class="headerlink" title="ES6 的作用域"></a>ES6 的作用域</h3><p>由于 ES5 之前 if 和 for 都没有块级作用域的概念，所以在很多时候，我们都必须借助于 function 的作用域来解决引用外面变量的问题。</p>
+<p>所以在 SE6 中加入了 let ，而let是有 if 和 for 的块级 作用域的。</p>
+<p>上边的代码可以改写为：</p>
+<pre><code>for (let i = 0; i &lt; btns.length; i++) {
+      btns[i].onclick = function () {
+        alert("点击了按钮" + (i + 1));
+      };
+    }</code></pre><h3 id="ES6-的-const"><a href="#ES6-的-const" class="headerlink" title="ES6 的 const"></a>ES6 的 const</h3><p>const关键字：</p>
+<p>在很多语言中已经存在，比如 C/C++ 中，主要的作用是将某个变量修饰为常量。</p>
+<p>在 JavaScript 中也是如此，使用 const 修饰的变量为常量，不可以再次赋值。</p>
+<p>当我们修饰的变量不会被再次赋值时，就可以使用 const 来保证数据的安全性。</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -774,16 +659,12 @@
                                     <span class="chip bg-color">前端</span>
                                 </a>
                             
-                                <a href="/tags/Vue/">
-                                    <span class="chip bg-color">Vue</span>
+                                <a href="/tags/ES6/">
+                                    <span class="chip bg-color">ES6</span>
                                 </a>
                             
-                                <a href="/tags/%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7/">
-                                    <span class="chip bg-color">计算属性</span>
-                                </a>
-                            
-                                <a href="/tags/computed/">
-                                    <span class="chip bg-color">computed</span>
+                                <a href="/tags/let/">
+                                    <span class="chip bg-color">let</span>
                                 </a>
                             
                         </div>
@@ -859,9 +740,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-            <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
                 <div class="article-badge left-badge text-color">
-                    <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                    <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+                </div>
                 <div class="card">
                     <a href="/posts/48682.html">
                         <div class="card-image">
@@ -880,9 +762,9 @@
                             
                         </div>
                         <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-10-24
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-10-24
+                            </span>
                             <span class="publish-author">
                                 
                                     <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -895,6 +777,7 @@
                             </span>
                         </div>
                     </div>
+
                     
                         <div class="card-action article-tags">
                             
@@ -921,24 +804,25 @@
                     下一篇&nbsp;<i class="fa fa-chevron-right"></i>
                 </div>
                 <div class="card">
-                    <a href="/posts/3718.html">
+                    <a href="/posts/25941.html">
                         <div class="card-image">
                             
                                 
-                                <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Vue 属性操作 --- v-bind 指令">
+                                <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Vue 属性操作 --- computed 计算属性">
                             
-                            <span class="card-title">Vue 属性操作 --- v-bind 指令</span>
+                            <span class="card-title">Vue 属性操作 --- computed 计算属性</span>
                         </div>
                     </a>
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                Vue 属性操作 --- v-bind 指令
+                                计算属性介绍在模板中可以直接通过插值语法显示一些 data 中的数据，但是在某些情况下，我们可能需要对数据进行一些转化后再显示，或者需要将多个数据结合起来进行显示。所以需要用到计算属性。
+计算属性基本用法比如我们有 firstName 和 
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-10-21
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-10-22
                             </span>
                             <span class="publish-author">
                                 
@@ -963,12 +847,12 @@
                                     <span class="chip bg-color">Vue</span>
                                 </a>
                             
-                                <a href="/tags/%E5%B1%9E%E6%80%A7%E6%93%8D%E4%BD%9C/">
-                                    <span class="chip bg-color">属性操作</span>
+                                <a href="/tags/%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7/">
+                                    <span class="chip bg-color">计算属性</span>
                                 </a>
                             
-                                <a href="/tags/v-bind/">
-                                    <span class="chip bg-color">v-bind</span>
+                                <a href="/tags/computed/">
+                                    <span class="chip bg-color">computed</span>
                                 </a>
                             
                         </div>
