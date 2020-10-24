@@ -65,14 +65,14 @@
   </url>
   
   <url>
-    <loc>zhangjiqiang.vip/archives/index.html</loc>
+    <loc>zhangjiqiang.vip/about/index.html</loc>
     
     <lastmod>2020-06-14</lastmod>
     
   </url>
   
   <url>
-    <loc>zhangjiqiang.vip/about/index.html</loc>
+    <loc>zhangjiqiang.vip/archives/index.html</loc>
     
     <lastmod>2020-06-14</lastmod>
     
@@ -158,20 +158,6 @@
   </url>
   
   <url>
-    <loc>zhangjiqiang.vip/tags/Mustache/</loc>
-    <lastmod>2020-10-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>zhangjiqiang.vip/tags/%E6%8F%92%E5%80%BC/</loc>
-    <lastmod>2020-10-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>zhangjiqiang.vip/tags/%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC/</loc>
     <lastmod>2020-10-24</lastmod>
     <changefreq>daily</changefreq>
@@ -187,6 +173,20 @@
   
   <url>
     <loc>zhangjiqiang.vip/tags/v-bind/</loc>
+    <lastmod>2020-10-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>zhangjiqiang.vip/tags/Mustache/</loc>
+    <lastmod>2020-10-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>zhangjiqiang.vip/tags/%E6%8F%92%E5%80%BC/</loc>
     <lastmod>2020-10-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
