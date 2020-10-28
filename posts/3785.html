@@ -15,7 +15,7 @@ Vue 的条件指令可以根据表达式的值在 DOM 中渲">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="theme-color" content="white"/>
-    <title>v-if、v-else-if和v-else的使用 | 碎碎念&amp;小强</title>
+    <title>Vue条件判断之v-if使用 | 碎碎念&amp;小强</title>
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -382,12 +382,12 @@ Vue 的条件指令可以根据表达式的值在 DOM 中渲">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">v-if、v-else-if和v-else的使用</h1>
+                    <h1 class="description center-align post-title">Vue条件判断之v-if使用</h1>
                 </div>
             </div>
         </div>
@@ -543,7 +543,7 @@ Vue 的条件指令可以根据表达式的值在 DOM 中渲">
                 
                     <div class="post-date info-break-policy">
                         <i class="fa fa-calendar-check-o fa-fw"></i>更新日期:&nbsp;&nbsp;
-                        2020-10-26
+                        2020-10-28
                     </div>
                 
 
@@ -737,31 +737,32 @@ Vue 的条件指令可以根据表达式的值在 DOM 中渲">
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-            <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article col s12 m6" data-aos="fade-up">
                 <div class="article-badge left-badge text-color">
-                    <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-                </div>
+                    <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
                 <div class="card">
-                    <a href="/posts/3785.html">
+                    <a href="/posts/6044.html">
                         <div class="card-image">
                             
                                 
-                                <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="v-if、v-else-if和v-else的使用">
+                                <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Vue条件判断之v-show使用">
                             
-                            <span class="card-title">v-if、v-else-if和v-else的使用</span>
+                            <span class="card-title">Vue条件判断之v-show使用</span>
                         </div>
                     </a>
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                v-if、v-else-if和v-else的使用v-if、v-else-if 和 v-else 这三个指令与 JavaScript 的条件语句 if、else 和 else if 类似。
-Vue 的条件指令可以根据表达式的值在 DOM 中渲
+                                v-showv-show 的用法和 v-if 非常相似，也用于决定一个元素是否渲染。
+&lt;body&gt;
+  &lt;div id="app"&gt;
+    &lt;div v-if="isShow" id="v-if"&gt;{{
                             
                         </div>
                         <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-10-26
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-10-28
+                        </span>
                             <span class="publish-author">
                                 
                                     <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -774,7 +775,6 @@ Vue 的条件指令可以根据表达式的值在 DOM 中渲
                             </span>
                         </div>
                     </div>
-
                     
                         <div class="card-action article-tags">
                             
@@ -786,8 +786,8 @@ Vue 的条件指令可以根据表达式的值在 DOM 中渲
                                     <span class="chip bg-color">Vue</span>
                                 </a>
                             
-                                <a href="/tags/%E6%9D%A1%E4%BB%B6%E6%8C%87%E4%BB%A4/">
-                                    <span class="chip bg-color">条件指令</span>
+                                <a href="/tags/v-show/">
+                                    <span class="chip bg-color">v-show</span>
                                 </a>
                             
                         </div>
@@ -1050,7 +1050,7 @@ v-on 介绍：
             
                 
                     &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                            class="white-color">7.3k</span>&nbsp;字
+                            class="white-color">7.7k</span>&nbsp;字
                 
                 
                 <script>
@@ -1233,7 +1233,7 @@ v-on 介绍：
 
 
 <script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1603719058310')
+  navigator.serviceWorker.register('/sw.js?t=1603894100473')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }

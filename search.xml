@@ -4,7 +4,36 @@
   
     
     <entry>
-      <title>v-if、v-else-if和v-else的使用</title>
+      <title>Vue条件判断之v-show使用</title>
+      <link href="posts/6044.html"/>
+      <url>posts/6044.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="v-show"><a href="#v-show" class="headerlink" title="v-show"></a>v-show</h2><p>v-show 的用法和 v-if 非常相似，也用于决定一个元素是否渲染。</p><pre><code>&lt;body&gt;  &lt;div id="app"&gt;    &lt;div v-if="isShow" id="v-if"&gt;{{msg}}&lt;/div&gt;    &lt;div v-show="isShow" id="v-show"&gt;{{msg}}&lt;/div&gt;  &lt;/div&gt;  &lt;script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"&gt;&lt;/script&gt;  &lt;script&gt;    var vm = new Vue({      el: "#app",      data: {        msg: "hello world",        isShow: true,      },    });  &lt;/script&gt;&lt;/body&gt;</code></pre><h3 id="v-show-和-v-if-的对比"><a href="#v-show-和-v-if-的对比" class="headerlink" title="v-show 和 v-if 的对比"></a>v-show 和 v-if 的对比</h3><p>通过执行上述代码，可以看到，都可以实现元素的渲染，那么 v-show 和 v-if 有什么区别呢？</p><p>当我们将 <code>isShow</code> 设置为 <code>false</code> 时，查看 DOM 结构：</p><p><img src="/medias/loading/orange.square-circle-preloader.svg" data-original="https://i.loli.net/2020/10/28/e9uCl6JZjQGLs8d.png" alt="v-show和v-if对比.png"></p><p>综上可以看出：</p><ul><li>在 v-if 中，当条件为 <code>false</code> 时，包含 v-if 指令的元素，不会再 DOM 中渲染。</li><li>在 v-show 中，当条件为 <code>false</code> 时， v-show 知识给元素添加了一个行内样式：<code>display: none</code> ，元素在 DOM 中仍然存在。</li></ul><p>所以，在实际开发中，当需要在显示与隐藏之间频繁切换时，推荐使用 v-show ，当从服务器获取数据进行判断，只有一次切换显示时，推荐使用 v-if 。</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> Vue.js </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+            <tag> Vue </tag>
+            
+            <tag> v-show </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Vue条件判断之v-if使用</title>
       <link href="posts/3785.html"/>
       <url>posts/3785.html</url>
       
