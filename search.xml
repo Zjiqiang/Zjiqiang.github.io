@@ -33,7 +33,7 @@
     
     
     <entry>
-      <title>Vue 条件判断之 v-if 使用</title>
+      <title>Vue 条件判断之 v-if 指令</title>
       <link href="posts/3785.html"/>
       <url>posts/3785.html</url>
       
@@ -62,7 +62,7 @@
     
     
     <entry>
-      <title>Vue 事件监听之 v-on 使用</title>
+      <title>Vue 事件监听之 v-on 指令</title>
       <link href="posts/61223.html"/>
       <url>posts/61223.html</url>
       
