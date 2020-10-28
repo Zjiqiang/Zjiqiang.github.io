@@ -4,7 +4,7 @@
   
     
     <entry>
-      <title>Vue条件判断之v-show使用</title>
+      <title>Vue 条件判断之 v-show 使用</title>
       <link href="posts/6044.html"/>
       <url>posts/6044.html</url>
       
@@ -33,7 +33,7 @@
     
     
     <entry>
-      <title>Vue条件判断之v-if使用</title>
+      <title>Vue 条件判断之 v-if 使用</title>
       <link href="posts/3785.html"/>
       <url>posts/3785.html</url>
       
@@ -62,7 +62,7 @@
     
     
     <entry>
-      <title>Vue 事件监听</title>
+      <title>Vue 事件监听之 v-on 使用</title>
       <link href="posts/61223.html"/>
       <url>posts/61223.html</url>
       
@@ -84,6 +84,8 @@
             
             <tag> 事件监听 </tag>
             
+            <tag> v-on </tag>
+            
         </tags>
       
     </entry>
@@ -91,7 +93,7 @@
     
     
     <entry>
-      <title>ES6的let和const使用</title>
+      <title>ES6 之 let 和 const 使用</title>
       <link href="posts/48682.html"/>
       <url>posts/48682.html</url>
       
@@ -120,7 +122,7 @@
     
     
     <entry>
-      <title>Vue 属性操作 --- computed 计算属性</title>
+      <title>Vue 属性操作之 computed 计算属性</title>
       <link href="posts/25941.html"/>
       <url>posts/25941.html</url>
       
@@ -151,7 +153,7 @@
     
     
     <entry>
-      <title>Vue 属性操作 --- v-bind 指令</title>
+      <title>Vue 属性操作之 v-bind 指令</title>
       <link href="posts/3718.html"/>
       <url>posts/3718.html</url>
       
@@ -182,7 +184,7 @@
     
     
     <entry>
-      <title>Vue 数据操作 --- Mustache 语法</title>
+      <title>Vue 数据操作之 Mustache 语法</title>
       <link href="posts/3079.html"/>
       <url>posts/3079.html</url>
       
@@ -242,7 +244,7 @@
     
     
     <entry>
-      <title>初识Vue.js</title>
+      <title>初识 Vue.js</title>
       <link href="posts/24073.html"/>
       <url>posts/24073.html</url>
       
