@@ -4,9 +4,13 @@
 
 <head><link rel=manifest href=/manifest.json>
     <meta charset="utf-8">
-    <meta name="keywords" content="let">
-    <meta name="description" content="let 、 var 和 constvar 的设计可以看做 JavaScript 语言设计上的错误，但是这种错误多半不能修复和移除，因为需要向后兼容。
-大概十多年前，Brandan Eich 就决定修复这个问题，于是他添加了一个新的关键字：l">
+    <meta name="keywords" content="v-for">
+    <meta name="description" content="v-forVue 提供了 v-for 指令来遍历数组和对象
+v-for 遍历数组当我们有一组数据需要渲染时，就可以使用 v-for 来完成。
+
+v-for 的语法类似于 JavaScript 中的 for 循环。
+
+格式：item in  ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +19,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="theme-color" content="white"/>
-    <title>ES6 之 let 和 const 使用 | 碎碎念&amp;小强</title>
+    <title>Vue 循环遍历之 v-for 指令 | 碎碎念&amp;小强</title>
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -382,12 +386,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">ES6 之 let 和 const 使用</h1>
+                    <h1 class="description center-align post-title">Vue 循环遍历之 v-for 指令</h1>
                 </div>
             </div>
         </div>
@@ -507,12 +511,12 @@
                                     <span class="chip bg-color">前端</span>
                                 </a>
                             
-                                <a href="/tags/ES6/">
-                                    <span class="chip bg-color">ES6</span>
+                                <a href="/tags/Vue/">
+                                    <span class="chip bg-color">Vue</span>
                                 </a>
                             
-                                <a href="/tags/let/">
-                                    <span class="chip bg-color">let</span>
+                                <a href="/tags/v-for/">
+                                    <span class="chip bg-color">v-for</span>
                                 </a>
                             
                         </div>
@@ -523,8 +527,8 @@
                         <div class="post-cate">
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                                <a href="/categories/ES6/" class="post-category">
-                                    ES6
+                                <a href="/categories/Vue-js/" class="post-category">
+                                    Vue.js
                                 </a>
                             
                         </div>
@@ -536,28 +540,28 @@
                 
                     <div class="post-date info-break-policy">
                         <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                        2020-10-24
+                        2020-10-29
                     </div>
                 
 
                 
                     <div class="post-date info-break-policy">
                         <i class="fa fa-calendar-check-o fa-fw"></i>更新日期:&nbsp;&nbsp;
-                        2020-10-28
+                        2020-10-29
                     </div>
                 
 
                 
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        768
+                        350
                     </div>
                 
 
                 
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        3 分
+                        1 分
                     </div>
                 
 
@@ -572,65 +576,61 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="let-、-var-和-const"><a href="#let-、-var-和-const" class="headerlink" title="let 、 var 和 const"></a>let 、 var 和 const</h2><p>var 的设计可以看做 JavaScript 语言设计上的错误，但是这种错误多半不能修复和移除，因为需要向后兼容。</p>
-<p>大概十多年前，Brandan Eich 就决定修复这个问题，于是他添加了一个新的关键字：<code>let</code>。</p>
-<p>我们可以将 let 看成更加完美的 var 。</p>
-<h3 id="ES5-的作用域"><a href="#ES5-的作用域" class="headerlink" title="ES5 的作用域"></a>ES5 的作用域</h3><p> JavaScript 中使用 var 来声明一个变量时，变量的作用域主要是和函数的定义有关。在 ES5 中只有函数有作用域的。</p>
-<p>变量作用域是指变量在什么范围内是可用的。而对于 var 来说，针对块定义来说是没有作用域的。比如：</p>
-<pre><code>{
-  var name = 'apple';
-  console.log(name);
-}
-console.log(name);</code></pre><p>上述代码中均能打印出 name 的值，var的定义不受大括号（{}）的限制、另外在使用 <code>if</code>、<code>for</code> 时，往往会引入一些问题。</p>
-<p>比如：</p>
-<pre><code>&lt;body&gt;
-  &lt;button&gt;按钮1&lt;/button&gt;
-  &lt;button&gt;按钮2&lt;/button&gt;
-  &lt;button&gt;按钮3&lt;/button&gt;
-  &lt;button&gt;按钮4&lt;/button&gt;
-  &lt;button&gt;按钮5&lt;/button&gt;
-  &lt;script&gt;
-    var btns = document.getElementsByTagName("button");
-    for (var i = 0; i &lt; btns.length; i++) {
-      btns[i].onclick = function () {
-        alert("点击了按钮" + i);
-      };
-    }
-  &lt;/script&gt;
-&lt;/body&gt;</code></pre><p>在上述代码中，我们期望在点击按钮时，弹出的提示是对应点击的按钮名，但是实际执行的结果却一直是<code>按钮5</code> 。</p>
-<p><img src="/medias/loading/orange.square-circle-preloader.svg" data-original="https://i.loli.net/2020/10/24/aje264wGM5IOJCc.png" alt="var 作用域问题.png"></p>
-<p>通常我们遇到这种问题，是使用闭包解决的，如：</p>
-<pre><code>&lt;script&gt;
-  var btns = document.getElementsByTagName("button");
-  for (var i = 0; i &lt; btns.length; i++) {
-    (function (num) {
-      btns[i].onclick = function () {
-        alert("点击了按钮" + (num + 1));
-      };
-    })(i);
-  }
-&lt;/script&gt;</code></pre><p>执行结果如下：</p>
-<p><img src="/medias/loading/orange.square-circle-preloader.svg" data-original="https://i.loli.net/2020/10/24/KHXkEVntNAWpT2g.png" alt="闭包解决 for 作用域问题.png"></p>
-<p>那么，为什么闭包可以解决 <code>for</code> 的作用域问题呢？</p>
-<p>答案是因为：闭包是一个函数，函数是有作用域的，函数里的 <code>i</code> 不会被 <code>for</code> 循环修改。</p>
-<h3 id="ES6-的作用域"><a href="#ES6-的作用域" class="headerlink" title="ES6 的作用域"></a>ES6 的作用域</h3><p>由于 ES5 之前 <code>if</code> 和 <code>for</code> 都没有块级作用域的概念，所以在很多时候，我们都必须借助于 <code>function</code> 的作用域来解决引用外面变量的问题。</p>
-<p>所以在 SE6 中加入了 <code>let</code> ，而 <code>let</code> 是有 <code>if</code> 和 <code>for</code> 的块级作用域的。</p>
-<p>上边的代码可以改写为：</p>
-<pre><code>for (let i = 0; i &lt; btns.length; i++) {
-      btns[i].onclick = function () {
-        alert("点击了按钮" + (i + 1));
-      };
-    }</code></pre><h3 id="ES6-的-const"><a href="#ES6-的-const" class="headerlink" title="ES6 的 const"></a>ES6 的 const</h3><p>const 关键字：</p>
-<p>在很多语言中已经存在，比如 C/C++ 中，主要的作用是将某个变量修饰为常量。</p>
-<p>在 JavaScript 中也是如此，使用 <code>const</code> 修饰的变量为常量，不可以再次赋值。</p>
-<p>当我们修饰的变量不会被再次赋值时，就可以使用 <code>const</code> 来保证数据的安全性。</p>
-<p>const 的注意点：</p>
+                <h2 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a>v-for</h2><p>Vue 提供了 v-for 指令来遍历数组和对象</p>
+<h3 id="v-for-遍历数组"><a href="#v-for-遍历数组" class="headerlink" title="v-for 遍历数组"></a>v-for 遍历数组</h3><p>当我们有一组数据需要渲染时，就可以使用 v-for 来完成。</p>
 <ul>
-<li>必须进行初始化。</li>
-<li>不能被修改。</li>
-<li>常量的含义是指向的对象不能修改，但可以改变对象内部的属性。</li>
+<li><p>v-for 的语法类似于 JavaScript 中的 for 循环。</p>
+</li>
+<li><p>格式：item in  items</p>
+</li>
 </ul>
-<script>
+<p>v-for 遍历数组样例：</p>
+<pre><code>&lt;body&gt;
+  &lt;div id="app"&gt;
+    &lt;ul&gt;
+      &lt;li v-for="book in books"&gt;{{book}}&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"&gt;&lt;/script&gt;
+  &lt;script&gt;
+    var vm = new Vue({
+      el: "#app",
+      data: {
+        books: [
+          "CSS权威指南",
+          "JavaScript高级程序设计",
+          "JavaScript Dom编程艺术",
+          "JavaScript数据结构与算法",
+          "JavaScript设计模式和开发模式",
+        ],
+      },
+    });
+  &lt;/script&gt;
+&lt;/body&gt;</code></pre><p>当需要在遍历的过程中获取索引值时，可以做如下修改：</p>
+<pre><code>    &lt;ul&gt;
+      &lt;li v-for="(book,index) in books"&gt;{{index+1}}.&amp;nbsp{{book}}&lt;/li&gt;
+    &lt;/ul&gt;</code></pre><p>执行结果：</p>
+<p><img src="/medias/loading/orange.square-circle-preloader.svg" data-original="https://i.loli.net/2020/10/29/B7dWuVcIEbqvZkD.png" alt="获取索引遍历数组.png"></p>
+<h3 id="v-for遍历对象"><a href="#v-for遍历对象" class="headerlink" title="v-for遍历对象"></a>v-for遍历对象</h3><pre><code>&lt;body&gt;
+  &lt;div id="app"&gt;
+    &lt;ul&gt;
+      &lt;li v-for="(value, key) in info"&gt;{{key}}: {{value}}&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"&gt;&lt;/script&gt;
+  &lt;script&gt;
+    var vm = new Vue({
+      el: "#app",
+      data: {
+        info: {
+          name: "小明",
+          age: 18,
+          height: 188,
+        },
+      },
+    });
+  &lt;/script&gt;
+&lt;/body&gt;</code></pre><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -665,12 +665,12 @@ console.log(name);</code></pre><p>上述代码中均能打印出 name 的值，v
                                     <span class="chip bg-color">前端</span>
                                 </a>
                             
-                                <a href="/tags/ES6/">
-                                    <span class="chip bg-color">ES6</span>
+                                <a href="/tags/Vue/">
+                                    <span class="chip bg-color">Vue</span>
                                 </a>
                             
-                                <a href="/tags/let/">
-                                    <span class="chip bg-color">let</span>
+                                <a href="/tags/v-for/">
+                                    <span class="chip bg-color">v-for</span>
                                 </a>
                             
                         </div>
@@ -746,34 +746,35 @@ console.log(name);</code></pre><p>上述代码中均能打印出 name 的值，v
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-            <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
                 <div class="article-badge left-badge text-color">
-                    <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                    <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+                </div>
                 <div class="card">
-                    <a href="/posts/61223.html">
+                    <a href="/posts/13771.html">
                         <div class="card-image">
                             
                                 
-                                <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Vue 事件监听之 v-on 指令">
+                                <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Vue 循环遍历之 v-for 指令">
                             
-                            <span class="card-title">Vue 事件监听之 v-on 指令</span>
+                            <span class="card-title">Vue 循环遍历之 v-for 指令</span>
                         </div>
                     </a>
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                Vue 事件监听在前端开发中，我们需要经常和用户进行交互，这个时候我们就必须监听用户发生的事件，比如点击、拖拽、键盘事件等等，在Vue中使用 v-on 指令。
-v-on 介绍：
+                                v-forVue 提供了 v-for 指令来遍历数组和对象
+v-for 遍历数组当我们有一组数据需要渲染时，就可以使用 v-for 来完成。
 
-作用：绑定事件监听器
-缩写：@
-预期：Function | 
+v-for 的语法类似于 JavaScript 中的 for 循环。
+
+格式：item in  
                             
                         </div>
                         <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-10-24
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-10-29
+                            </span>
                             <span class="publish-author">
                                 
                                     <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -786,6 +787,7 @@ v-on 介绍：
                             </span>
                         </div>
                     </div>
+
                     
                         <div class="card-action article-tags">
                             
@@ -797,12 +799,8 @@ v-on 介绍：
                                     <span class="chip bg-color">Vue</span>
                                 </a>
                             
-                                <a href="/tags/%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC/">
-                                    <span class="chip bg-color">事件监听</span>
-                                </a>
-                            
-                                <a href="/tags/v-on/">
-                                    <span class="chip bg-color">v-on</span>
+                                <a href="/tags/v-for/">
+                                    <span class="chip bg-color">v-for</span>
                                 </a>
                             
                         </div>
@@ -816,25 +814,27 @@ v-on 介绍：
                     下一篇&nbsp;<i class="fa fa-chevron-right"></i>
                 </div>
                 <div class="card">
-                    <a href="/posts/25941.html">
+                    <a href="/posts/6044.html">
                         <div class="card-image">
                             
                                 
-                                <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Vue 属性操作之 computed 计算属性">
+                                <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="Vue 条件判断之 v-show 指令">
                             
-                            <span class="card-title">Vue 属性操作之 computed 计算属性</span>
+                            <span class="card-title">Vue 条件判断之 v-show 指令</span>
                         </div>
                     </a>
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                计算属性介绍在模板中可以直接通过插值语法显示一些 data 中的数据，但是在某些情况下，我们可能需要对数据进行一些转化后再显示，或者需要将多个数据结合起来进行显示。所以需要用到计算属性。
-计算属性基本用法比如我们有 firstName 和 
+                                v-showv-show 的用法和 v-if 非常相似，也用于决定一个元素是否渲染。
+&lt;body&gt;
+  &lt;div id="app"&gt;
+    &lt;div v-if="isShow" id="v-if"&gt;{{
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-10-22
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-10-28
                             </span>
                             <span class="publish-author">
                                 
@@ -859,12 +859,8 @@ v-on 介绍：
                                     <span class="chip bg-color">Vue</span>
                                 </a>
                             
-                                <a href="/tags/%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7/">
-                                    <span class="chip bg-color">计算属性</span>
-                                </a>
-                            
-                                <a href="/tags/computed/">
-                                    <span class="chip bg-color">computed</span>
+                                <a href="/tags/v-show/">
+                                    <span class="chip bg-color">v-show</span>
                                 </a>
                             
                         </div>

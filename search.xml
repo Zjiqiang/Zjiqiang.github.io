@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>Vue 循环遍历之 v-for 指令</title>
+      <link href="posts/13771.html"/>
+      <url>posts/13771.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a>v-for</h2><p>Vue 提供了 v-for 指令来遍历数组和对象</p><h3 id="v-for-遍历数组"><a href="#v-for-遍历数组" class="headerlink" title="v-for 遍历数组"></a>v-for 遍历数组</h3><p>当我们有一组数据需要渲染时，就可以使用 v-for 来完成。</p><ul><li><p>v-for 的语法类似于 JavaScript 中的 for 循环。</p></li><li><p>格式：item in  items</p></li></ul><p>v-for 遍历数组样例：</p><pre><code>&lt;body&gt;  &lt;div id="app"&gt;    &lt;ul&gt;      &lt;li v-for="book in books"&gt;{{book}}&lt;/li&gt;    &lt;/ul&gt;  &lt;/div&gt;  &lt;script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"&gt;&lt;/script&gt;  &lt;script&gt;    var vm = new Vue({      el: "#app",      data: {        books: [          "CSS权威指南",          "JavaScript高级程序设计",          "JavaScript Dom编程艺术",          "JavaScript数据结构与算法",          "JavaScript设计模式和开发模式",        ],      },    });  &lt;/script&gt;&lt;/body&gt;</code></pre><p>当需要在遍历的过程中获取索引值时，可以做如下修改：</p><pre><code>    &lt;ul&gt;      &lt;li v-for="(book,index) in books"&gt;{{index+1}}.&amp;nbsp{{book}}&lt;/li&gt;    &lt;/ul&gt;</code></pre><p>执行结果：</p><p><img src="/medias/loading/orange.square-circle-preloader.svg" data-original="https://i.loli.net/2020/10/29/B7dWuVcIEbqvZkD.png" alt="获取索引遍历数组.png"></p><h3 id="v-for遍历对象"><a href="#v-for遍历对象" class="headerlink" title="v-for遍历对象"></a>v-for遍历对象</h3><pre><code>&lt;body&gt;  &lt;div id="app"&gt;    &lt;ul&gt;      &lt;li v-for="(value, key) in info"&gt;{{key}}: {{value}}&lt;/li&gt;    &lt;/ul&gt;  &lt;/div&gt;  &lt;script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"&gt;&lt;/script&gt;  &lt;script&gt;    var vm = new Vue({      el: "#app",      data: {        info: {          name: "小明",          age: 18,          height: 188,        },      },    });  &lt;/script&gt;&lt;/body&gt;</code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> Vue.js </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+            <tag> Vue </tag>
+            
+            <tag> v-for </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Vue 条件判断之 v-show 指令</title>
       <link href="posts/6044.html"/>
       <url>posts/6044.html</url>
